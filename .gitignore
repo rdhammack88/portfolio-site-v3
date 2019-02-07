@@ -1,6 +1,7 @@
 node_modules
 test_pages
 dist/
+app/assets/scripts/libs
 app/assets/images
 app/assets/DustinHammack-Resume.pdf
 app/temp
