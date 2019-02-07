@@ -1,0 +1,65 @@
+/* Site Wide Styles*/
+
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'Josefin Slab', Arial, Helvetica, sans-serif;
+}
+
+
+h2 {
+    font-size: 3.2rem;
+}
+
+a {
+    font-weight: 800 !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+section:not(.home) {
+    padding-top: 100px;
+}
+
+.btn.btn-link {
+    background-color: $light-blue;
+    color: $light-white;
+}
+
+// .container {
+//     width: 90%;
+//     max-width: 1200px;
+// }
+
+/* Override Bootstrap styles to remove margin on mobile devices */
+// .row {
+//     margin-right: 0 !important;
+// }
+
+// .st1{fill:#9E005D;}

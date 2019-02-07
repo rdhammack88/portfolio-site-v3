@@ -1,0 +1,33 @@
+$skills: (
+    html: 85,
+    css: 85,
+    javascript: 75,
+    php: 65
+);
+
+@each $skill, $percent in $skills {
+    .#{$skill}-progress-ring {
+        stroke: $activeLink; // $primary-light; // $dark-blue;
+        stroke-width: 16px;
+        $PI: 3.141592653589793;
+        $circumference: (55 * 2 * $PI);
+        stroke-dasharray: $circumference $circumference;
+        stroke-dashoffset: $circumference;
+        animation: progress-#{$skill} 4s linear 1.2s forwards;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        $offset: $circumference - (($percent / 100) * $circumference);
+        @keyframes progress-#{$skill} {
+            0% {
+                stroke-dashoffset: $circumference;
+            }
+            50% {
+                stroke-dashoffset: $circumference -
+                    (($percent / 150) * $circumference);
+            }
+            100% {
+                stroke-dashoffset: $offset;
+            }
+        }
+    }
+}

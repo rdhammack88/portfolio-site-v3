@@ -1,0 +1,42 @@
+.contact {
+    .required-text {
+        color: $salmon-red;
+    }
+
+    .form-group {
+        label:not(.form-check-label) {
+            width: 100%;
+
+            strong {
+                display: inline-block;
+            }
+
+            small {
+                display: inline-block;
+            }
+        }
+
+        &.form-check {
+            border: 1px solid $light-gray;
+            padding: 10px 5px;
+            width: 50%;
+
+            @include break(768px) {
+                width: 30%;
+            }
+
+            @include break(992px) {
+                width: 23%;
+            }
+
+            label {
+                width: 90%;
+            }
+
+            input[type='checkbox'] {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

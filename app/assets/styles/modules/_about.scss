@@ -1,0 +1,98 @@
+.about {
+    // padding-top: 150px;
+
+    .bio-wrapper {
+        // background-color: $navbar; // $primary-dark;
+        color: #111; // $activeLink; // $light-white;
+        // width: 100vw;
+        // min-height: 550px;
+        // margin-top: -148px;
+        
+        p.self-bio {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 1.25rem;
+            
+        }
+
+        @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+            // -webkit-clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 30vh);
+            // clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 30vh);
+            
+            // -webkit-clip-path: polygon(0 0, 100% 10vh, 100% 60vh, 0 50vh);
+            // clip-path: polygon(0 0, 100% 10vh, 100% 60vh, 0 50vh);
+            // height: 60vh;
+        }
+    }
+
+    .resumeLinkGridItem {
+        // background-color: $link; // $navbar; // $primary-dark;
+        // color: $activeLink; // $light-white;
+        // height: 20vh;
+        width: 100vw;
+        text-align: center;
+
+        .btn-dark {
+            background-color: $dark-cyan;
+            > i.material-icons {
+                font-size: 20px;
+                vertical-align: sub;
+            }
+        }
+    }
+    .skills-container {
+        background-color: $navbar; // $light-blue;
+        // width: 100vw !important;
+        height: 50vh;
+        margin: 100px 0;
+        color: $light-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+            // @include break(768px) {
+                -webkit-clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
+                clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
+                height: 90vh;
+            // }
+        }
+
+        p.skills-description {
+            font-size: 0.9rem;
+            letter-spacing: 0.1rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid $light-white;
+        }
+        .progress-container {
+            position: relative;
+            svg.progress-ring {
+                height: 150px;
+                width: 150px;
+                .progress-outline {
+                    fill: $light-white;
+                }
+            }
+            .label {
+                color: $light-white;
+                background-color: $navbar; // $primary-dark; // $salmon-pink;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                font-size: 2rem;
+                position: absolute;
+                top: 25px;
+                left: 40px;
+                display: flex;
+                /* Vertical Alignment */
+                align-items: center;
+                /* Horizontal Alignment */
+                justify-content: center;
+                * { // .percentage
+                    font-size: 4rem;
+                    vertical-align: super;
+                }
+            }
+        }
+    }
+}

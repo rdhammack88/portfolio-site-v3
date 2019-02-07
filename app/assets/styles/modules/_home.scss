@@ -1,0 +1,102 @@
+/* Home Section Styles*/
+
+.home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100%  100%, 50% 75vh, 0 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75vh, 0 100%);
+
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 50% 100%, 70vh 0);
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 50% 100%, 0 81vh);
+        height: 95vh;
+    }
+
+    // background: transparentize($darker-blue, 0.4);
+    
+    // .row {
+    //     position: relative;
+    // }
+
+    .text-holder {
+        transform: translateY(65%);
+
+        h2 {
+            color: $light-white;
+            margin-bottom: -10px;
+            margin-top: -20px;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: $light-white;
+            margin-top: -2px;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        // /** Arrow Code */
+        span {
+            color: $light-goldenrod;
+            vertical-align: middle;
+
+            &:first-of-type {
+                position: relative;
+                right: -10px;
+                top: -1.5px;
+            }
+
+            &:last-of-type {
+                position: relative;
+                right: 10px;
+                top: -1.5px;
+            }
+        }
+
+        hr {
+            border: 0.5px solid $dark-goldenrod;
+            display: inline-block;
+            width: 88%; // 72%;
+            margin: 0 auto;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            vertical-align: middle;
+        }
+    }
+    
+    .home-img-holder {
+        // position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // flex-direction: column;
+        // align-self: flex-end;
+
+        > div {
+            background: $light-white;
+            padding: 10px;
+            border-radius: 50%; // 20%
+            transform: translateY(105%); // 65%;
+
+            // @include break(768px) {
+            //     transform: translateX(-35%);
+            //     border-radius: 0;
+            // }
+
+            img {
+                border-radius: 50%; // 20%
+                width: 50vw;
+                max-width: 200px;
+
+                // @include break(768px) {
+                //     border-radius: 0;
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+node_modules
+test_pages
+dist/
+app/assets/images
+app/assets/DustinHammack-Resume.pdf
+app/temp
+
+package-lock.json

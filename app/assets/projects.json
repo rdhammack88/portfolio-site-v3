@@ -1,0 +1,68 @@
+{
+    "projects": [
+        {
+            "featured": [
+                {
+                    "projectname": "Blogger",
+                    "shortname": "blogger",
+                    "techused": "PHP, MySQL, CSS3, Bootstrap v3, Javascript, jQuery v2.1, AJAX",
+                    "completed": "false",
+                    "completed_description": "Currently converting this project from pure PHP & MySQL, to Laravel and ReactJS.",
+                    "projectimage": "./assets/images/projects/blogger.jpg",
+                    "projectimageclass": "blogger-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/blogger/",
+                    "githuburl": "https://github.com/rdhammack88/blogger_site",
+                    "description": "A blogging site to post your thoughts."
+                },
+                {
+                    "projectname": "Quizzer",
+                    "shortname": "quizzer",
+                    "techused": "PHP Laravel, MySQL, SCSS, Javascript, AJAX",
+                    "completed": "true",
+                    "completed_description": "",
+                    "projectimage": "./assets/images/projects/quizzer.jpg",
+                    "projectimageclass": "quizzer-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/quizzer/",
+                    "githuburl": "https://github.com/rdhammack88/Web-Development-Quizzer",
+                    "description": "A quiz site to test knowledge based on Web Technologies."
+                },
+                {
+                    "projectname": "Movie Finder",
+                    "shortname": "movie_finder",
+                    "techused": "PHP, AngularJS, SASS, Bootstrap v3, OMDb API",
+                    "completed": "false",
+                    "completed_description": "Currently converting this project from AngularJS to ReactJS, changing API from OMDb TMdb, and adding a \"comment, review, and favorite\" option.",
+                    "projectimage": "./assets/images/projects/movie.jpg",
+                    "projectimageclass": "moviefinder-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/movie_reviewer/",
+                    "githuburl": "https://github.com/rdhammack88/Movie-Finder",
+                    "description": "Find information on almost any movie."
+                },
+                {
+                    "projectname": "Course Manager",
+                    "shortname": "course_manager",
+                    "techused": "HTML5, HTML5 Local Storage API, HTML5 File API, SASS, Bootstrap v4, Javascript, jQuery v3.2, jQuery UI, Font Awesome",
+                    "completed": "false",
+                    "completed_description": "Currently converting this project from Vanilla JavaScript to ReactJS, and changing user interface.",
+                    "projectimage": "./assets/images/projects/playlist.jpg",
+                    "projectimageclass": "coursemanager-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/playlist_maker/",
+                    "githuburl": "https://github.com/rdhammack88/Playlist-Maker",
+                    "description": "Create a playlist of your choice of movies or music files, and save the list for later."
+                },
+                {
+                    "projectname": "Bomber Skateboard Shop",
+                    "shortname": "bomber_skateboard_shop",
+                    "techused": "PHP, MySQL, SCSS, Javascript, jQuery v3.3, Font Awesome, Google Maps API",
+                    "completed": "false",
+                    "completed_description": "Still working on layout, and need to implement paypal/stripe feature.",
+                    "projectimage": "./assets/images/projects/bomber.jpg",
+                    "projectimageclass": "bomberskateshop-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/bomber-skateshop/",
+                    "githuburl": "https://github.com/rdhammack88/Bomber-Skateshop",
+                    "description": "A fictitional online skateboard shop."
+                }
+            ]
+        }
+    ]
+}
