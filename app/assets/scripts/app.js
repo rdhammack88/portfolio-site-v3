@@ -1,7 +1,13 @@
 /**
  * Site Scripts
  */
-import $ from "jquery";
+var jQuery = require('jquery');
+// var Easing = require('jquery.easing')(jQuery);
+// import {easing} from 'jquery.easing';
+// define(['jquery', 'jquery.easing'], function (jQuery, easing) {
+//     easing(jQuery)
+// });
+import $ from 'jquery';
 import Navbar from './modules/navbar';
 
 $(document).ready(function () {
@@ -12,10 +18,10 @@ $(document).ready(function () {
      */
     windowScroll();
 
-    // /**
-    //  * Remove top-nav-scroll class from navbar with js, default w/o JS
-    //  */
-    $('.fixed-top').removeClass('top-nav-scroll');
+    /**
+     * Remove top-nav-scroll class from navbar with js, default w/o JS
+     */
+    // $('.fixed-top').removeClass('top-nav-scroll');
 
     // $('.skills-container').addClass('d-none');
 
@@ -23,7 +29,7 @@ $(document).ready(function () {
         opacity: '0'
     });
 
-    // /**
+    // /** Navbar.fixNavbar()
     //  * When window is scrolled past the top 50px, add class to navbar that changes nav colors
     //  */
     // function fixNavbar() {
@@ -140,7 +146,7 @@ $(document).ready(function () {
      */
     $(window).on('scroll', windowScroll);
 
-    // /**
+    // /** Navbar.mobileMenuToggle()
     //  * When 'Hamburger' icon is clicked, add 'rotated' animation class to button,
     //  * that changes 'Hamburger' to a close 'X' icon
     //  */
@@ -150,7 +156,7 @@ $(document).ready(function () {
     // });
 
     // /**
-    //  *
+    //  * Navbar.mobileMenuLink()
     //  */
     // $('.navbar-collapse li a').click(function () {
     //     if (window.innerWidth < 768) {
@@ -159,18 +165,18 @@ $(document).ready(function () {
     //     }
     // });
 
-    /**
-     * When 'Nav' links are clicked, add to the parent 'li - list item' class 'active'
-     */
-    $('a.nav-link').click(function () {
-        $(this)
-            .parent('li')
-            .siblings('li')
-            .removeClass('active');
-        $(this)
-            .parent('li')
-            .addClass('active');
-    });
+    // /** Navbar.activeLink()
+    //  * When 'Nav' links are clicked, add to the parent 'li - list item' class 'active'
+    //  */
+    // $('a.nav-link').click(function () {
+    //     $(this)
+    //         .parent('li')
+    //         .siblings('li')
+    //         .removeClass('active');
+    //     $(this)
+    //         .parent('li')
+    //         .addClass('active');
+    // });
 
     /**
      * Add smooth scroll affect to page when 'Nav' links are clicked,

@@ -10,7 +10,7 @@ import "../../temp/scripts/modernizr"; // Add support for modernizr for legacy b
 import "picturefill"; // Added support for legacy browsers and Responsive Images
 import "lazysizes"; // Adds support for lazy loading of images
 
-import 'jquery';
+// import 'jquery';
 // import "./libs/jquery.easing.min";
 // require('./modules/libs/jquery.easing.min')(jQuery);
 

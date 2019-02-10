@@ -1,25 +1,34 @@
 import $ from 'jquery';
+import smoothScroll from 'jquery-smooth-scroll';
 
 class Navbar {
     constructor() {
-        this.mobileNavbar = $('.navbar-collapse');
-        this.mobileNavbarLinks = $('.navbar-collapse li a');
-        this.navbarIcon = $('.navbar-toggler');
-        this.rotatedNavbarIcon = $('.navbar-toggler-icon');
-
         this.navbar = $('.navbar');
+        this.navbarMenu = $('.navbar-collapse');
+        // this.navbarLinks = $('.navbar-collapse li a');
+        this.navbarLinks = $('a.nav-link');
+        this.mobileNavbarIcon = $('.navbar-toggler');
+        this.rotatedMobileNavbarIcon = $('.navbar-toggler-icon');
+
 
         /**
          * Remove top-nav-scroll class from navbar upon page load
          */
-        // this.navbar.removeClass('top-nav-scroll');
+        // $('.fixed-top').removeClass('top-nav-scroll');
+        this.navbar.removeClass('top-nav-scroll');
 
         this.events();
     }
 
     events() {
-        this.navbarIcon.click(this.mobileMenuToggle.bind(this));
-        this.mobileNavbarLinks.click(this.mobilMenuLink.bind(this));
+        this.mobileNavbarIcon.click(this.mobileMenuToggle.bind(this));
+        this.navbarLinks.click(this.mobileMenuLink.bind(this));
+
+        this.navbarLinks.click(this.activeLink);
+    }
+
+    addSmoothScrolling() {
+        this.navbarLinks.smoothScroll();
     }
 
     /**
@@ -29,18 +38,19 @@ class Navbar {
      */
     mobileMenuToggle() {
         console.log('Mobile Menu Toggle');
-        this.mobileNavbar.toggleClass('show');
-        this.rotatedNavbarIcon.toggleClass('rotated');
+        this.navbarMenu.toggleClass('show');
+        this.rotatedMobileNavbarIcon.toggleClass('rotated');
     }
 
     /**
     * When a mobile nav link is clicked, close the nav
     */
-    mobilMenuLink() {
+    mobileMenuLink() {
         console.log("Mobile Menu Link Clicked");
         if (window.innerWidth < 768) {
-            this.mobileNavbar.toggleClass('show');
-            this.rotatedNavbarIcon.toggleClass('rotated');
+            this.mobileMenuToggle();
+            // this.navbarMenu.toggleClass('show');
+            // this.rotatedMobileNavbarIcon.toggleClass('rotated');
         }
     }
 
@@ -55,6 +65,22 @@ class Navbar {
         } else {
             this.navbar.removeClass('top-nav-scroll');
         }
+    }
+
+    /**
+     * When 'Nav' links are clicked, add to the parent 'li - list item' class 'active'
+     */
+    activeLink() {
+        console.log($(this).parent('li')
+            .siblings('li')); //.children());
+        console.log(`${$(this).parent('li').attr('classList')} link is active`);
+        $(this)
+            .parent('li')
+            .siblings('li')
+            .removeClass('active');
+        $(this)
+            .parent('li')
+            .addClass('active');
     }
 }
 
