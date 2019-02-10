@@ -8,16 +8,38 @@
         padding: 0.5rem 1rem;
     }
 
-    /* Toggler Hamburger Button */
-    .navbar-toggler {
+    &-nav {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include break(768px) {
+            flex-direction: row;
+        }
+    }
+
+    /* Mobile Toggler Hamburger Button */
+    &-toggler {
+        display: block;
         position: fixed;
-        z-index: 1;
         top: 10px;
         right: 10px;
+        z-index: 999;
         outline: none;
+        border: none;
+        background-color: transparent;
 
-        /* Toggler Hamburger Icon */
-        .navbar-toggler-icon {
+        @include break(768px) {
+            display: none;
+        }
+
+        /* Mobile Toggler Hamburger Icon */
+        &-icon {
             display: block;
             width: 2rem;
             height: 0.3rem;
@@ -30,7 +52,10 @@
             -moz-transition: all 0.8s ease;
             transition: all 0.8s ease;
 
-            /* Toggler Hamburger Icon When Clicked, Rotate Class is Toggled Via jQuery */
+            /* 
+             * Mobile Toggler Hamburger Icon When Clicked,
+             * Rotate Class is Toggled Via jQuery 
+             */
             &.rotated {
                 background: $activeLink; // $light-white;
 
@@ -74,32 +99,52 @@
             background-color: $navbar; // $darkest-blue;
             width: 100%;
             opacity: 1;
-            animation: navSlider 4s ease-in 2s;
+                text-align: center;
+            animation: navSlider 4s ease-in 2s reverse;
 
             li.nav-item a.nav-link {
-                width: 100vw;
-                font-size: 1.6rem;
-                padding: 0.7rem 1.5rem;
-                &:hover {
-                    color: $activeLink; // $baby-blue;
-                    background: $link; // $dark-blue;
-                    border-radius: 0;
-                }
+                // width: 100vw;
+                // font-size: 1.6rem;
+                // padding: 0.7rem 1.5rem;
+                // &:hover {
+                //     color: $activeLink; // $baby-blue;
+                //     background: $link; // $dark-blue;
+                //     border-radius: 0;
+                // }
             }
         }
     }
 
     /* List Items Contained in the Navigation Bar */
     li.nav-item {
+        // display: block;
+        width: 100%;
+        // text-align: center;
+        // // padding: 5px 7px;
+
+        // @include break(768px) {
+        //     display: inline-block;
+        //     // width: 15%;
+        // }
+        
         &.active a.nav-link {
             color: $activeLink; // $dark-blue;
-        }
 
-        &.nav-logo {
-            display: none;
-
-            @include break(768px) {
+            &::after {
+                content: '';
+                width: 0;
+                height: 3px;
+                background-color: $activeLink;
+                position: relative;
                 display: block;
+                top: 2px;
+                -webkit-transition: all 400ms ease-in-out;
+                -moz-transition: all 400ms ease-in-out;
+                transition: all 400ms ease-in-out;
+
+                @include break(768px) {
+                    width: 100%;
+                }
             }
         }
 
@@ -109,11 +154,16 @@
             font-size: 1.4rem;
             font-weight: 600;
             text-align: center;
-            padding: 0.5rem 1.315rem;
+            padding: 1rem 1.315rem;
             outline: none;
+            display: inline-block;
+            width: 100%;
 
             &:hover {
-                border-radius: 10px;
+                // border-radius: 10px;
+                color: $activeLink; // $baby-blue;
+                background: $link; // $dark-blue;
+                border-radius: 0;
             }
 
             @include break(768px, 950px) {
@@ -155,9 +205,9 @@
     }
 }
 
-li.active .border-bottom-animation::after {
-    background-color: $activeLink; // $dark-blue;
-}
+// li.active .border-bottom-animation::after {
+//     background-color: $activeLink; // $dark-blue;
+// }
 
 /* Custom Class Added When Screen is Scrolled, to Give Navigation Menu a Background */
 .top-nav-scroll {
@@ -178,4 +228,13 @@ li.active .border-bottom-animation::after {
             }
         }
     }
+}
+
+/* Top Fixed Navbar */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
 }
