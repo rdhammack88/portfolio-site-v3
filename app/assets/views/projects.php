@@ -1,8 +1,8 @@
 <!-- Project Portfolio Section -->
 <section class="projects" id="projects"> <!-- mt-5 -->
-	<div class="container">
+	<div class="project-container">
 		<h2 class="text-center">Portfolio</h2>
-		<div class="row">
+		<!-- <div class="row"> -->
 
 		<?php
             $jsonFile = file_get_contents("./assets/projects.json");
@@ -14,11 +14,14 @@
                     foreach ($project_info as $project) {
                         ?>
 
-			<div class="project-container col-10 offset-1 col-lg-4 col-md-6 my-5 mx-auto text-center" data-project-name="<?php echo $project['shortname']; ?>"> 
+			<div class="card col-10 offset-1 col-lg-4 col-md-6 my-5 mx-auto text-center" data-project-name="<?php echo $project['shortname']; ?>"> 
 			<!--  col-sm-8 offset-sm-2 -->
-				<div class="card">
+				<!-- <div class="card"> -->
+                    <div class="card-image">
+                        <img src="<?php echo $project['projectimage']; ?>" alt="" class="project-image">
+                    </div>
 					<div class="card-heading">
-						<img src="<?php echo $project['projectimage']; ?>" alt="" class="project-image">
+						
 						<h4 class="card-title"><?php echo $project['projectname']; ?></h4>
 					</div>
 					<div class="card-body">
@@ -54,7 +57,7 @@
         </p>
 
 					</div>
-				</div>				
+				<!-- </div>			 -->
 			</div> <!-- End of Project Container -->						
 
 			<!-- End of all 3 PHP FOREACH -->
@@ -64,7 +67,7 @@
             }
             ?>
 
-		</div> <!-- End of Row -->
+		<!-- </div> End of Row -->
 	</div> <!-- End of .container -->
 </section><!-- Project Portfolio Section -->
 
