@@ -11,8 +11,8 @@
         p.self-bio {
             text-align: center;
             margin-top: 3rem;
+            margin-bottom: 4rem;
             font-size: 1.25rem;
-            
         }
 
         @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
@@ -41,56 +41,90 @@
         }
     }
     .skills-container {
-        background-color: $navbar; // $light-blue;
+        // background-color: $navbar; // $light-blue;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($navbar, 0.8),  
+            rgba($navbar, 0.6)
+        ),  url("../../../assets/images/mountain1-md-res.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0; // 30% 40%; // center bottom;
+        background-attachment: fixed;
         // width: 100vw !important;
-        height: 50vh;
-        margin: 100px 0;
+        height: 40vh;
+        margin: 10vh 0;
+        // padding: 100px 0;
         color: $light-white;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        
 
         @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
             // @include break(768px) {
-                -webkit-clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
-                clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
-                height: 90vh;
+                // -webkit-clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
+                // clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
+                // height: 90vh;
+                -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
+                clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
+                height: 70vh;
             // }
         }
 
-        p.skills-description {
-            font-size: 0.9rem;
-            letter-spacing: 0.1rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid $light-white;
+        .skills-title {
+            margin-top: 0;
+            margin-bottom: 2rem;
         }
+
+        // p.skills-description {
+        //     font-size: 0.9rem;
+        //     letter-spacing: 0.1rem;
+        //     padding-top: 1.2rem;
+        //     border-top: 1px solid $light-white;
+        // }
+
         .progress-container {
-            position: relative;
-            svg.progress-ring {
-                height: 150px;
-                width: 150px;
-                .progress-outline {
-                    fill: $light-white;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            // align-items: center;
+            // flex-direction: row;
+            // align-content: space-around;
+            // flex-direction: column;
+
+            .progress {
+                position: relative;
+                svg.progress-ring {
+                    height: 150px;
+                    width: 150px;
+                    .progress-outline {
+                        fill: $light-white;
+                    }
                 }
-            }
-            .label {
-                color: $light-white;
-                background-color: $navbar; // $primary-dark; // $salmon-pink;
-                height: 100px;
-                width: 100px;
-                border-radius: 50%;
-                font-size: 2rem;
-                position: absolute;
-                top: 25px;
-                left: 40px;
-                display: flex;
-                /* Vertical Alignment */
-                align-items: center;
-                /* Horizontal Alignment */
-                justify-content: center;
-                * { // .percentage
-                    font-size: 4rem;
-                    vertical-align: super;
+                .label {
+                    color: $light-white;
+                    background-color: $navbar; // $primary-dark; // $salmon-pink;
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                    font-size: 2rem;
+                    position: absolute;
+                    top: 25px;
+                    transform: translateX(25%);
+                    // left: 40px;
+                    display: flex;
+                    /* Vertical Alignment */
+                    align-items: center;
+                    /* Horizontal Alignment */
+                    justify-content: center;
+                    * { // .percentage
+                        font-size: 4rem;
+                        vertical-align: super;
+                    }
                 }
             }
         }

@@ -32,6 +32,7 @@ h2 {
 
 a {
     font-weight: 800 !important;
+    text-decoration: none;
 }
 
 ul {
@@ -47,10 +48,35 @@ section:not(.home) {
     padding-top: 100px;
 }
 
-.btn.btn-link {
-    background-color: $light-blue;
-    color: $light-white;
+.btn {
+    padding: .7rem;
+    margin: .7rem;
+    background-color: $blue;
+    color: $link;
+    border-radius: 20px;
+    text-decoration: none;
+
+    &.btn-link {
+        background-color: $light-blue;
+        color: $light-white;
+    }
+
 }
+
+
+
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    display: none;
+
+    @include break(768px) {
+        display: block;
+    }
+}
+
 
 // .container {
 //     width: 90%;
