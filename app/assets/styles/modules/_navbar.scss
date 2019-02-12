@@ -33,6 +33,13 @@
         outline: none;
         border: none;
         background-color: transparent;
+        
+        /* Trial Styles */
+        // background-color: $navbar; // transparent;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #333;
+        /* End Trial Styles */
 
         @include break(768px) {
             display: none;
@@ -43,14 +50,17 @@
             display: block;
             width: 2rem;
             height: 0.3rem;
-            margin-bottom: 0.46rem;
             background: $activeLink; // #000;
-            border-radius: 20%;
+            border-radius: 10%; // 20%;
             position: relative;
             outline: none;
             -webkit-transition: all 0.8s ease;
             -moz-transition: all 0.8s ease;
             transition: all 0.8s ease;
+
+            &:not(:last-of-type) {
+                margin-bottom: 0.46rem;
+            }
 
             /* 
              * Mobile Toggler Hamburger Icon When Clicked,
@@ -84,12 +94,33 @@
         -moz-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
         display: none;
+        width: 0;
+        // animation: navSlider 1s ease-in .5s reverse;
+
+        position: absolute;
+        top: -100%;
+        // left: 0;
+        right: 0;
+        left: 100%;
 
         @include break(768px) {
+            width: 100%;
             opacity: 1;
             top: 0;
             display: flex;
             justify-content: space-evenly;
+            position: initial;
+            top: 0;
+            left: 0;
+        }
+
+        &.hide {
+            @include break(768px) {
+                -webkit-transition: all 300ms ease-in-out;
+                -moz-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+                animation: navSlider .5s linear .5s reverse;
+            } 
         }
 
         /* When Hamburger Icon is Clicked and Nav Menu Appears */
@@ -112,11 +143,13 @@
 
             //     // rgba($navbar, .9),
             background-color: $navbar; // $darkest-blue;
-            width: 100%;
-            opacity: 1;
+            // width: 100%;
+            // opacity: 1;
             display: block;
             text-align: center;
-            animation: navSlider 4s ease-in 2s reverse;
+
+            
+            animation: navSlider .3s linear .2s forwards; // 3000ms
 
             li.nav-item a.nav-link {
                 // width: 100vw;
