@@ -39,6 +39,7 @@ class Navbar {
     mobileMenuToggle() {
         console.log('Mobile Menu Toggle');
         this.navbarMenu.toggleClass('show');
+        this.navbarMenu.toggleClass('hide');
         this.rotatedMobileNavbarIcon.toggleClass('rotated');
     }
 

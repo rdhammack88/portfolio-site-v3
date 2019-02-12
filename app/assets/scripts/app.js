@@ -1,33 +1,42 @@
 /**
  * Site Scripts
  */
-var jQuery = require('jquery');
+// var jQuery = require('jquery');
 // var Easing = require('jquery.easing')(jQuery);
 // import {easing} from 'jquery.easing';
 // define(['jquery', 'jquery.easing'], function (jQuery, easing) {
 //     easing(jQuery)
 // });
 import $ from 'jquery';
-import Navbar from './modules/navbar';
+import Navbar from './modules/Navbar';
+import Scroll from './modules/Scroll';
 
 $(document).ready(function () {
     let navbar = new Navbar();
+    let scroll = new Scroll();
     
-    /**
-     * Invoke windowScroll() function immediately on page load
-     */
-    windowScroll();
+    // /**
+    //  * Invoke windowScroll() function immediately on page load
+    //  */
+    // windowScroll();
 
-    $(window).on('resize', () => {
-        console.log('Resizing');
-        if(window.innerWidth <= 768) {
-            console.log('Resizing below 768px');
-            $('.navbar').removeClass('top-nav-scroll').removeClass('show');
-        }
-        else if(window.innerWidth > 768 &&  $('.navbar').offset().top > 50) {
-            $('.navbar').addClass('top-nav-scroll');
-        }
-    });
+    // $(window).on('resize', () => {
+    //     console.log('Resizing');
+    //     if(window.innerWidth <= 768) {
+    //         console.log('Resizing below 768px');
+    //         $('.navbar').removeClass('top-nav-scroll');
+    //         $('.navbar-collapse').addClass('hide');
+    //     }
+    //     else if (window.innerWidth > 768 && $('.navbar').offset().top > 50) { // $('.navbar').height()) { // 50) {
+    //         console.log('window bigger than 768 and below nav height');
+    //         $('.navbar-collapse').removeClass('show hide');
+    //         $('.navbar').addClass('top-nav-scroll');
+    //     }
+    //     else if(window.innerWidth > 768) {
+    //         console.log('window bigger than 768');
+    //         $('.navbar-collapse').removeClass('show hide');
+    //     }
+    // });
 
     /**
      * Remove top-nav-scroll class from navbar with js, default w/o JS
