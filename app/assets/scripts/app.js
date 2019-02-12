@@ -18,6 +18,17 @@ $(document).ready(function () {
      */
     windowScroll();
 
+    $(window).on('resize', () => {
+        console.log('Resizing');
+        if(window.innerWidth <= 768) {
+            console.log('Resizing below 768px');
+            $('.navbar').removeClass('top-nav-scroll').removeClass('show');
+        }
+        else if(window.innerWidth > 768 &&  $('.navbar').offset().top > 50) {
+            $('.navbar').addClass('top-nav-scroll');
+        }
+    });
+
     /**
      * Remove top-nav-scroll class from navbar with js, default w/o JS
      */
