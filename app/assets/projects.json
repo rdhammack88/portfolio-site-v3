@@ -15,6 +15,18 @@
                     "description": "A blogging site to post your thoughts."
                 },
                 {
+                    "projectname": "Course Manager",
+                    "shortname": "course_manager",
+                    "techused": "HTML5, HTML5 Local Storage API, HTML5 File API, SASS, Bootstrap v4, Javascript, jQuery v3.2, jQuery UI, Font Awesome",
+                    "completed": "false",
+                    "completed_description": "Currently converting this project from Vanilla JavaScript to ReactJS, and changing user interface.",
+                    "projectimage": "./assets/images/projects/playlist.jpg",
+                    "projectimageclass": "coursemanager-tn",
+                    "projecturl": "https://www.dustinhammack.com/projects/playlist_maker/",
+                    "githuburl": "https://github.com/rdhammack88/Playlist-Maker",
+                    "description": "Create a playlist of your choice of movies or music files, and save the list for later."
+                },
+                {
                     "projectname": "Quizzer",
                     "shortname": "quizzer",
                     "techused": "PHP Laravel, MySQL, SCSS, Javascript, AJAX",
@@ -37,18 +49,6 @@
                     "projecturl": "https://www.dustinhammack.com/projects/movie_reviewer/",
                     "githuburl": "https://github.com/rdhammack88/Movie-Finder",
                     "description": "Find information on almost any movie."
-                },
-                {
-                    "projectname": "Course Manager",
-                    "shortname": "course_manager",
-                    "techused": "HTML5, HTML5 Local Storage API, HTML5 File API, SASS, Bootstrap v4, Javascript, jQuery v3.2, jQuery UI, Font Awesome",
-                    "completed": "false",
-                    "completed_description": "Currently converting this project from Vanilla JavaScript to ReactJS, and changing user interface.",
-                    "projectimage": "./assets/images/projects/playlist.jpg",
-                    "projectimageclass": "coursemanager-tn",
-                    "projecturl": "https://www.dustinhammack.com/projects/playlist_maker/",
-                    "githuburl": "https://github.com/rdhammack88/Playlist-Maker",
-                    "description": "Create a playlist of your choice of movies or music files, and save the list for later."
                 },
                 {
                     "projectname": "Bomber Skateboard Shop",
