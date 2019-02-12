@@ -29,11 +29,11 @@
         // background-color: $link; // $navbar; // $primary-dark;
         // color: $activeLink; // $light-white;
         // height: 20vh;
-        width: 100vw;
-        text-align: center;
+        // width: 100vw;
+        // text-align: center;
 
         .btn-dark {
-            background-color: $dark-cyan;
+            background-color: $navbar; // $activeLink; // $dark-cyan;
             > i.material-icons {
                 font-size: 20px;
                 vertical-align: sub;

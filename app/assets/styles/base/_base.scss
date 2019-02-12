@@ -12,7 +12,7 @@ body {
 }
 
 p {
-    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-family: $font-primary;
 }
 
 h1,
@@ -22,7 +22,7 @@ h4,
 h5,
 h6,
 a {
-    font-family: 'Josefin Slab', Arial, Helvetica, sans-serif;
+    font-family: $font-secondary;
 }
 
 
@@ -31,7 +31,7 @@ h2 {
 }
 
 a {
-    font-weight: 800 !important;
+    // font-weight: 800 !important;
     text-decoration: none;
 }
 
@@ -45,20 +45,31 @@ ul {
 }
 
 section:not(.home) {
-    padding-top: 100px;
+    // padding-top: 100px;
+    padding-top: 50px;
 }
 
 .btn {
     padding: .7rem;
     margin: .7rem;
-    background-color: $blue;
+    background-color: $activeLink; // $blue;
     color: $link;
-    border-radius: 20px;
+    border-radius: 5px; // 20px;
     text-decoration: none;
+    box-shadow: 2px 2px 2px #444;
 
     &.btn-link {
-        background-color: $light-blue;
-        color: $light-white;
+        background-color: $link; // $activeLink; // $light-blue; //  rgba($activeLink, .1);
+        color: #000; // $activeLink; // $light-white;
+        border: 2px solid $activeLink;
+        transition: all .5s;
+
+        &:hover {
+            background-color: $activeLink;
+            color: $light-white;
+            // border: none;
+            // border-radius: 20px;
+        }
     }
 
 }

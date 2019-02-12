@@ -2,15 +2,43 @@
 footer {
     background: $navbar; // $darkest-blue;
     margin: 0px;
+    padding: 6rem 0 25px;
     position: relative;
+    // height: 200px;
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 50% 100%, 70vh 0);
+        // clip-path: polygon(0 0, 100% 0, 100% 80vh, 50% 100%, 0 80vh);
+        -webkit-clip-path: polygon(0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%);
+        // height: 95vh;
+    }
+
+    h5 {
+        font-size: 1.4rem;
+        color: $light-white;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .follow-links {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+    }
 
     span:not(.heart) {
-        padding: 0.3em 0.7em;
+        // padding: 0.3em 0.7em;
+        padding: .6rem;
         color: white;
         background: $darker-gray;
         border-radius: 50%;
-        margin: 3px 7px;
+        margin: 3px 10px;
         transition: all 500ms ease;
+        // display: flex;
+        // justify-content: center;
+        // align-self: center;
 
         &:hover {
             background-color: $activeLink; // $baby-blue;
@@ -24,9 +52,10 @@ footer {
 
     p {
         margin: 0;
+        margin-top: 1.2rem;
         color: $light-white;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.3rem;
 
         span.heart {
             padding: 0 5px;
@@ -38,7 +67,7 @@ footer {
     .top a {
         position: absolute;
         right: 2%;
-        top: 5%;
+        top: 10%;
         color: $gray;
         transition: all 500ms ease;
 

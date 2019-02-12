@@ -1,22 +1,101 @@
+$borderColor: rgba(0,0,0,0.6);
 .contact {
-    .required-text {
-        color: $salmon-red;
+    padding-bottom: 13rem;
+
+    padding-top: 13rem !important;
+    margin-top: 3rem;
+    margin-bottom: -7rem;
+
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($navbar, 0.8),  
+            rgba($navbar, 0.6)
+    ),  url("../../../assets/images/mountain2-md-res.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0; // 30% 40%; // center bottom;
+    background-attachment: fixed;
+    // width: 100vw !important;
+    // height: 40vh;
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {        
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
+
+        -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
     }
 
-    .form-group {
-        label:not(.form-check-label) {
-            width: 100%;
+    h2 {
+        color: $link;
+    }
 
-            strong {
-                display: inline-block;
+    .required-text {
+        // color: $salmon-red;
+        color:$link; // $borderColor;
+        font-size: 1.3em;
+    }
+
+    small {
+        display: none;
+    }
+
+    .form-row {
+        // width: 100%;
+        // display: flex;
+        // flex-wrap: wrap;
+        // // justify-content: space-around;
+        // justify-content: center;
+    }
+
+    .form {
+        &-group {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            margin-bottom: 1.1rem;
+
+            &:not(:last-of-type) {
+                // flex-direction: column-reverse;
             }
 
-            small {
-                display: inline-block;
+            ::-webkit-input-placeholder,
+            ::placeholder {
+                font-family: $font-secondary;
+                font-weight: lighter;
+                // color: red;
+                color: #000; // $borderColor;
+            }
+
+            & :placeholder-shown ~ label {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(2rem)
+            }
+
+            // flex: 2;
+            label:not(.form-check-label) {
+                width: 100%;
+                color: $link;
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin-left: .3rem; // .4rem
+                display: block;
+                transition: all .5s; // 1.3s;
+
+                strong {
+                    // // display: inline-block;
+                    // display: none;
+                }
+
+                small {
+                    // display: inline-block;
+                    display: none;
+                }
             }
         }
 
-        &.form-check {
+        &-check {
             border: 1px solid $light-gray;
             padding: 10px 5px;
             width: 50%;
@@ -39,4 +118,111 @@
             }
         }
     }
+    
+    input[type="text"],
+    textarea {
+        line-height: 2rem;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid $borderColor; // $light-gray;
+    }
+
+
+    input[type="text"] {
+        // // width: 50%;
+        
+        // flex: 2 1 6rem;
+        flex: 2;
+        
+        // &::placeholder {
+        //     color: $borderColor;
+        // }
+
+        &:placeholder-shown ~ label {
+            // opacity: 0;
+            // visibility: hidden;
+            // transform: translateY(2rem)
+        }
+    }
+
+    // label {
+        
+    //     strong {
+    //         font-weight: 700;
+    //         margin-left: .4rem;
+    //         display: block;
+    //         transition: all .3s;
+    //     }
+
+    //     input:placeholder-shown {
+    //         opacity: 0;
+    //         visibility: hidden;
+    //         transform: translateY(2rem)
+    //     }
+    // }
+
+    // label {
+    //     // font-size-adjust: 1.2rem;
+    //     font-weight: 700;
+    //     margin-left: .4rem;
+    //     // margin-top: .7rem;
+    //     display: block;
+    //     transition: all .3s;
+
+    //     // opacity: 1;
+    //     // visibility: visible;
+    //     // transform: translateY(-2rem);
+
+    //     // @if (:placeholder-shown) {
+            
+    //     // // }
+    //     // // & ~ :placeholder-shown {
+    //     //     opacity: 0;
+    //     //     visibility: hidden;
+    //         transform: translateY(2rem);
+    //     // } @else {
+    //     //     opacity: 1;
+    //     //     visibility: visible;
+    //     //     transform: translateY(-2rem);
+    //     // }
+
+    //     & ~ input[type="text"] {
+    //         flex: 2;
+                    
+    //         &::placeholder {
+    //             color: $borderColor;
+    //         }
+    //     }
+    // }
+
+    textarea {
+        // width: 90%;
+        // margin-top: 2rem;
+        flex: 2;
+
+        &::placeholder {
+            color: $borderColor;
+        }
+    }
+
+    form {
+        width: 70vw;
+        max-width: 500px;
+        margin: 0 auto;
+
+        @include break(768px) {
+            width: 50vw;
+        }
+    }
+
+    .btn-submit {
+        margin: 0;
+        border-color: $borderColor;
+
+        &:hover {
+            // border-color: $activeLink;
+        }
+    }
+
+    
 }

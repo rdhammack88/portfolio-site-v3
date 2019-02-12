@@ -83,12 +83,13 @@
         -webkit-transition: all 300ms ease-in-out;
         -moz-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
-        display: flex;
-        justify-content: space-evenly;
+        display: none;
 
         @include break(768px) {
             opacity: 1;
             top: 0;
+            display: flex;
+            justify-content: space-evenly;
         }
 
         /* When Hamburger Icon is Clicked and Nav Menu Appears */
@@ -96,10 +97,25 @@
             -webkit-transition: all 300ms ease-in-out;
             -moz-transition: all 300ms ease-in-out;
             transition: all 300ms ease-in-out;
+            // // background: linear-gradient(
+            // //     to right bottom,
+            // //     rgba($navbar, 0.8),  
+            // //     rgba($link, 1)
+            // //     rgba(#111, 0.6),
+            // // ); 
+
+            // background: linear-gradient(
+            //     to right bottom,
+            //     rgba($navbar, 0.8),  
+            //     rgba($link, .5)
+            // ); 
+
+            //     // rgba($navbar, .9),
             background-color: $navbar; // $darkest-blue;
             width: 100%;
             opacity: 1;
-                text-align: center;
+            display: block;
+            text-align: center;
             animation: navSlider 4s ease-in 2s reverse;
 
             li.nav-item a.nav-link {
