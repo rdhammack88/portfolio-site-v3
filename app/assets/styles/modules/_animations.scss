@@ -124,6 +124,9 @@
     0% {
         opacity: 0;
     }
+    50% {
+        opacity: .5;
+    }
     100% {
         opacity: 1;
     }
@@ -132,6 +135,9 @@
 @-moz-keyframes fadeIn {
     0% {
         opacity: 0;
+    }
+    50% {
+        opacity: .5;
     }
     100% {
         opacity: 1;
@@ -142,6 +148,9 @@
     0% {
         opacity: 0;
     }
+    50% {
+        opacity: .5;
+    }
     100% {
         opacity: 1;
     }
@@ -151,13 +160,16 @@
     0% {
         opacity: 0;
     }
+    50% {
+        opacity: .5;
+    }
     100% {
         opacity: 1;
     }
 }
 
 .animateFadeIn {
-    animation: fadeIn 4s ease forwards;
+    animation: fadeIn 3s ease forwards; // 4s
 }
 
 .animateProjectsFadeIn {
