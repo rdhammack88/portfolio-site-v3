@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import {
-    // browserWindow,
     navbar,
     navbarLinks,
     navbarMenu,
@@ -8,13 +7,13 @@ import {
     rotatedMobileNavbarIcon} from './Elements';
 
 import {
+    // activeLink,
     fixNavbar,
     mobileMenuToggle,
-    mobileMenuLink,
-    activeLink} from './Navbar';
+    mobileMenuLink} from './Navbar';
 
 import {
-    activateContactLink,
+    activeLink,
     animateProgress,
     windowScroll
 } from './Scroll';
@@ -23,36 +22,20 @@ class Events {
     constructor() {
         this.development();
         this.events();
+        fixNavbar();
+
 
     }
 
     events() {
-        window.onscroll = windowScroll;
-
+        $(window).on('scroll', windowScroll);
         mobileNavbarIcon.click(mobileMenuToggle);
         navbarLinks.click(mobileMenuLink);
         navbarLinks.click(activeLink);
-
-        // let scroll = windowScroll(window, fixNavbar,activateContactLink, animateProgress);
-
-        // window.on('scroll', scroll);
-
-
-
-        /**
-         * Remove top-nav-scroll class from navbar upon page load
-         */
-        // navbar.removeClass('top-nav-scroll');
-
-        // fixNavbar(navbar);
     }
 
     /** For Development Purposes */
     development() {
-        // if (window.innerWidth > 768) {
-            fixNavbar();
-        // }
-
         $(window).on('resize', windowResize);
 
         function windowResize() {

@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import {
-    // browserWindow,
     linkRefs,
     navbar,
     navbarLinks,
@@ -10,87 +9,8 @@ import {
 } from './Elements';
 import { fixNavbar } from './Navbar';
 
-/**
- * Since Contact form is NOT full height of window, the scroll to feature doesn't work adding the 'active' class
- * to the parent 'li'
- * This checks the window height to verify if the contact form is in view,
- * and adds the 'active' class to the 'contact-link' parent 'li'
- */
-function activateContactLink() {
-    // console.log($('#contact').offset().top); // 3586.234375
-    // console.log($(window).scrollTop()); // 3438
-
-    // if ($(window).scrollTop() >= ($('#contact').offset().top - 200)) {
-    //     $('#contact-link')
-    //         .parent('li')
-    //         .addClass('active')
-    //         .siblings('li.nav-item')
-    //         .removeClass('active');
-    // }
-
-
-    // if (
-    //     $(document).height() - window.innerHeight <=
-    //     window.scrollY + 200
-    // ) {
-    //     $('#contact-link')
-    //         .parent('li')
-    //         .addClass('active')
-    //         .siblings('li.nav-item')
-    //         .removeClass('active');
-    // } 
-
-
-
-    // else if (
-    //     window.scrollY <=
-    //     $('.projects').offset().top + $('.projects').height() / 1.5 &&
-    //     window.scrollY >= $('.projects').offset().top
-    // ) {
-    //     $('#projects-link')
-    //         .parent('li')
-    //         .addClass('active');
-    //     $('#contact-link')
-    //         .parent('li')
-    //         .removeClass('active');
-    // }
-
-
-
-
-
-    // if ($(window).scrollTop() >= ($('#contact').offset().top - 200)) {
-    //     $('#contact-link')
-    //         .parent('li')
-    //         .addClass('active')
-    //         .siblings('li.nav-item')
-    //         .removeClass('active');
-    // }
-    // else if (
-    //     window.scrollY <=
-    //     $('.projects').offset().top + $('.projects').height() / 1.5 &&
-    //     window.scrollY >= $('.projects').offset().top
-    // ) {
-    //     $('#projects-link')
-    //         .parent('li')
-    //         .addClass('active');
-    //     $('#contact-link')
-    //         .parent('li')
-    //         .removeClass('active');
-    // }
-
-
-    // console.log($(this).attr('href'))
-    // let linkRefs = $.each(navbarLinks, () => console.log($(this)) );
-    // console.log(linkRefs);
-
-    // activeLink();
-}
-
-
-/** Make it dynamic by creating a list of section elems and find the scrollTop of each */
+/** Add active to nav link based on section top offset */
 function activeLink() {
-    // console.log(linkRefs);
     $.each(linkRefs, (indx, val) => {
         if ($(window).scrollTop() >= ($(val).offset().top - 300)) {
             $(`${val}-link`)
@@ -99,10 +19,8 @@ function activeLink() {
                 .siblings('li.nav-item')
                 .removeClass('active');
         }
-    })
+    });
 }
-
-
 
 /**
  * When page scrolls to skills-container section,
@@ -135,7 +53,8 @@ function animateProgress() {
         $('.progress-ring circle:nth-of-type(2)').each(function (i) {
             $(this).addClass(animatedClasses[i]);
         });
-        $('.skills-container').addClass('animateFadeIn');
+        // $('.skills-container').addClass('animateFadeIn');
+        $('.progress-container').addClass('animateFadeIn');
     }
 }
 
@@ -150,14 +69,12 @@ function animateProgress() {
 function windowScroll() {
     fixNavbar();
     activeLink();
-    // activateContactLink();
     animateProgress();
     // animateProjectsFadeIn();
 }
 
 export {
     activeLink,
-    activateContactLink,
     animateProgress,
     windowScroll
 };
