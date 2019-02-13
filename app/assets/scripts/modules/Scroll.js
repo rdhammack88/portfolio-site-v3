@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import smoothScroll from 'jquery-smooth-scroll';
 import {
     linkRefs,
     navbar,
@@ -8,6 +9,10 @@ import {
     rotatedMobileNavbarIcon
 } from './Elements';
 import { fixNavbar } from './Navbar';
+
+function addSmoothScrolling() {
+    navbarLinks.smoothScroll();
+}
 
 /** Add active to nav link based on section top offset */
 function activeLink() {
@@ -75,6 +80,7 @@ function windowScroll() {
 
 export {
     activeLink,
+    addSmoothScrolling,
     animateProgress,
     windowScroll
 };

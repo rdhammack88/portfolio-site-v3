@@ -35,8 +35,8 @@ function fixNavbar() {
  */
 function mobileMenuToggle() {
     console.log('Mobile Menu Toggle');
-    navbarMenu.toggleClass('show');
     navbarMenu.toggleClass('hide');
+    navbarMenu.toggleClass('show');
     rotatedMobileNavbarIcon.toggleClass('rotated');
 }
 

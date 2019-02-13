@@ -14,6 +14,7 @@ import {
 
 import {
     activeLink,
+    addSmoothScrolling,
     animateProgress,
     windowScroll
 } from './Scroll';
@@ -23,7 +24,7 @@ class Events {
         this.development();
         this.events();
         fixNavbar();
-
+        addSmoothScrolling();
 
     }
 
