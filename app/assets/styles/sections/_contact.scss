@@ -1,0 +1,105 @@
+/* Contact Form Styles */
+.contact {
+    padding-top: 13rem;
+    padding-bottom: 13rem;
+    margin-bottom: -7rem;
+
+    @extend %flex;
+
+    @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 100%');
+
+    .section-title {
+        color: $link;
+    }
+
+    .required-text {
+        color: $link; // $salmon-red
+        font-size: 1.3em;
+    }
+
+    small {
+        display: none;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        border-radius: 5px;
+        border: 2px solid $borderColor; // $light-gray;        
+
+        &:focus {
+            outline-color: $activeLink;
+            border: .2rem solid $activeLink;
+        }
+
+        &::-webkit-input-placeholder,
+        ::placeholder {
+            font-family: $font-secondary;
+            font-weight: lighter;
+            font-size: 1.2rem;
+            color: $navbar; // $borderColor; // red;
+            margin: 0;
+        }
+
+        &:placeholder-shown ~ label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(2rem)
+        }
+    }
+
+    label {
+        width: 100%;
+        color: $link;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: left;
+        margin-left: .3rem; // .4rem
+        display: block;
+        transition: all .5s;
+    }
+
+    .form {
+        width: 80vw; // 70vw;
+        max-width: 500px;
+        margin: 0 auto;
+
+        @include break(768px) {
+            width: 60vw;
+        }
+
+        &-group {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            margin-bottom: 1rem;
+
+            // label {
+            //     width: 100%;
+            //     color: $link;
+            //     font-size: 1.3rem;
+            //     font-weight: 700;
+            //     text-align: left;
+            //     margin-left: .3rem; // .4rem
+            //     display: block;
+            //     transition: all .5s;
+            // }
+        }
+
+        &-footer {
+            font-size: 1.1rem;
+            text-align: left;
+        }
+    }
+    
+    .form-row {
+        // width: 100%;
+        // display: flex;
+        // flex-wrap: wrap;
+        // // justify-content: space-around;
+        // justify-content: center;
+    }
+}

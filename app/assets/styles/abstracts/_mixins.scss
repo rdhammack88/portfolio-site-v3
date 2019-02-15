@@ -1,3 +1,4 @@
+/* Mixin Styles */
 @mixin clearfix {
     &:before,
     &:after {
@@ -63,3 +64,17 @@
 // @mixin flex-display($display, ) {
 //     // Maybe extends instead
 // }
+
+// @mixin clipPath() {
+//     @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+//         @content;
+//     }
+// }
+
+@mixin polygonClipPath($path, $height: 100%) {
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+        -webkit-clip-path: polygon(#{$path});
+        clip-path: polygon(#{$path});
+        height: $height;
+    }
+}

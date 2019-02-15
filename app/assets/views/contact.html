@@ -1,8 +1,8 @@
 <!-- Contact Form Section -->
-<section id="contact" class="contact"> <!-- mt-5 pb-4 -->
+<section id="contact" class="contact">
 	<div class="container">
-		<h2 class="text-center">Lets work together</h2>
-		<form action="contact.php" method="post" class="mx-auto">
+		<h2 class="section-title">Lets work together</h2>
+		<form action="contact.php" method="post" class="form">
 			<!-- <div class="form-row"> -->
 				<div class="form-group">
 					<input type="text" class="" id="name" name="name" placeholder="Name" autocomplete="name" required>
@@ -13,27 +13,28 @@
 				</div>
 				<div class="form-group">
 					<input type="text" class="" id="email" name="email" placeholder="Email" autocomplete="email" required>
-					<small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else.</small>
 					<label for="email">
 						<strong>Email:</strong> <!-- &nbsp;&nbsp; -->
 						<small class="text-danger d-none emailError">* Required</small>
 					</label>
 				</div>
 			<!-- </div> -->
-			<div class="form-group"> 
-				<textarea name="message" id="message" rows="5" cols="10" class="form-control" placeholder="Project ideas, details, budget, etc..."
+			<div class="form-group"> <!-- cols="10" -->
+				<textarea name="message" id="message" rows="5" class="" placeholder="Project ideas, details, budget, etc..."
 						  required></textarea>
 				<label for="message">
 					<strong>Message:</strong> &nbsp;&nbsp;
 					<small class="text-danger d-none emailError">* Required</small>
 				</label>
 			</div>
-			<p class="mb-3"><span class="required-text">&#42; All fields required</span></p>
-			<!-- <div class="form-group form-check d-none">
-				<input type="checkbox" class="form-check-input mx-2 d-none" id="robotCheck" name="robotCheck" value="gotcha">
-				<!-- <label class="form-check-label text-uppercase text-center ml-4" for="robotCheck"><strong>I am a Robot</strong></label> --
-			</div> -->
-			<button type="submit" name="send" class="btn btn-link btn-submit">Send</button>
+			<div class="form-footer"> <!-- class="form-group" -->
+				<p class=""><span class="required-text">&#42; All fields required</span></p>
+				<!-- <div class="form-group form-check d-none">
+								<input type="checkbox" class="form-check-input mx-2 d-none" id="robotCheck" name="robotCheck" value="gotcha">
+								<!-- <label class="form-check-label text-uppercase text-center ml-4" for="robotCheck"><strong>I am a Robot</strong></label> --
+							</div> -->
+				<button type="submit" name="send" class="btn btn-submit">Send</button>
+			</div>
 		</form>
 	</div>
 </section><!-- Contact Form Section -->

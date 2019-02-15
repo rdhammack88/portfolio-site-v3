@@ -1,18 +1,10 @@
-/* Footer */
+/* Footer Styles */
 footer {
-    background: $navbar; // $darkest-blue;
-    margin: 0px;
+    background: $navbar; // rgba($navbar, .2); // $navbar; // $darkest-blue;
     padding: 6rem 0 25px;
     position: relative;
-    // height: 200px;
-
-    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
-        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 50% 100%, 70vh 0);
-        // clip-path: polygon(0 0, 100% 0, 100% 80vh, 50% 100%, 0 80vh);
-        -webkit-clip-path: polygon(0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%);
-        // height: 95vh;
-    }
+    
+    @include polygonClipPath('0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%');
 
     h5 {
         font-size: 1.4rem;
@@ -28,7 +20,7 @@ footer {
         margin: 0;
     }
 
-    span:not(.heart) {
+    .follow-links-btn {
         // padding: 0.3em 0.7em;
         padding: .6rem;
         color: white;
@@ -36,39 +28,34 @@ footer {
         border-radius: 50%;
         margin: 3px 10px;
         transition: all 500ms ease;
-        // display: flex;
-        // justify-content: center;
-        // align-self: center;
+        
+        @extend %flex;
 
         &:hover {
-            background-color: $activeLink; // $baby-blue;
-        }
-
-        a {
-            text-decoration: none;
-            color: $light-white;
+            background-color: $activeLink;
         }
     }
 
-    p {
+    .copyright {
         margin: 0;
         margin-top: 1.2rem;
         color: $light-white;
         font-weight: 700;
         font-size: 1.3rem;
 
-        span.heart {
+        .heart {
             padding: 0 5px;
             color: $heart-red;
             font-size: 1.4rem;
         }
     }
 
-    .top a {
+    .top-scroll__btn {
         position: absolute;
         right: 2%;
         top: 10%;
         color: $gray;
+        font-size: 1rem;
         transition: all 500ms ease;
 
         .fa-arrow-circle-up:hover {

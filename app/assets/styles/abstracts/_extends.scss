@@ -1,0 +1,23 @@
+/* Extends Styles */
+%backgroundImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+%flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+%flex-row {
+    @extend %flex;
+    flex-direction: row;
+}
+
+%flex-column {
+    @extend %flex;
+    flex-direction: column;
+}

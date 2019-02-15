@@ -1,32 +1,55 @@
+/* Import Normalize Styles */
 @import "../../../node_modules/normalize.css/normalize";
-// @import "base/variables";
-// @import "base/mixins";
-// @import "base/global";
 
-// @import "modules/sprite";
-// @import "modules/buttons";
-// @import "modules/wrapper";
-// @import "modules/row";
-// @import "modules/section";
-// @import "modules/header";
-// @import "modules/footer";
-
-
-
-/* Import Bootstrap Styles */
-// @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-// @import '~bootstrap';
 /* Import All Custom Styles */
-@import 'base/_variables';
-@import 'base/_mixins';
+// @import 'abstracts/_variables';
+// @import 'abstracts/_mixins';
+// @import 'abstracts/_extends';
+// @import 'base/_base';
+// @import 'modules/grid';
+// @import 'base/_animations';
+// @import 'modules/_sprites';
+// @import 'modules/_navbar';
+// @import 'modules/_home';
+// @import 'modules/_about';
+// @import 'modules/_skills';
+// @import 'modules/_projects';
+// @import 'modules/_contact';
+// @import 'modules/_footer';
+
+
+// @import 'variables/_variables';
+
+
+@import 'variables/_colors';
+@import 'variables/_font';
+@import 'variables/_layout';
+
+@import 'abstracts/_extends';
+@import 'abstracts/_helpers';
+@import 'abstracts/_mixins';
+
+@import 'animations/_animations';
+
+// @import 'layout/_grid';
+
+@import 'imagery/_sprites';
+@import 'imagery/_images';
+
 @import 'base/_base';
-@import 'modules/grid';
-@import 'modules/_animations';
-@import 'modules/_sprites';
-@import 'modules/_navbar';
-@import 'modules/_home';
-@import 'modules/_about';
-@import 'modules/_skills';
-@import 'modules/_projects';
-@import 'modules/_contact';
-@import 'modules/_footer';
+@import 'base/_typography';
+
+@import 'components/_card';
+@import 'components/_container';
+@import 'components/_buttons';
+@import 'components/_skills';
+
+// @import 'layout/_sections';
+@import 'layout/_navbar';
+@import 'layout/_footer';
+
+@import 'sections/_home';
+@import 'sections/_about';
+@import 'sections/_projects';
+@import 'sections/_contact';
+

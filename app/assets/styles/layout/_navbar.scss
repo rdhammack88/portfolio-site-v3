@@ -1,22 +1,80 @@
-/* Navigation */
+/* Navigation Styles */
 .navbar {
-    /* Remove Padding When Screen is Less Than 768px */
     padding: 0;
-
-    /* Add Padding When Screen is Greater Than 768px */
+    
     @include break(768px) {
         padding: 0.5rem 1rem;
     }
 
-    &-nav {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
+    .hide {
+        // @include break(768px) {
+        
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        
+
+        /* ANIMATIONS TESTING START */
+
+        // background-color: $navbar;
+        // top: 0;
+        // right: 0;
+        // left: 0;
+        // width: 100%;
+        // opacity: 1;
+        // animation: navSliderHide .3s linear .2s reverse;
+
+        // display: none;
+        opacity: 0;
+        width: 0;
+        transform: translate(95vw, -100%); // scale(.5); // 100vw, -100% // 100%, -100% // 90vw, -100%
+
+        /* ANIMATIONS TESTING END */
+
+        @include break(768px) {
+            opacity: 1;
+            width: 100%;
+            transform: translate(0, 0);
+        }
+    }
+
+    /* When Hamburger Icon is Clicked and Nav Menu Appears */
+    .show {
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        background-color: $navbar; // $darkest-blue;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        
+        
+        display: block;
+        opacity: 1;
+        width: 100%;
+        transform: translate(0, 0); // scale(.9);
+        // animation: navSlider .3s linear .2s forwards; // 3000ms
+
+        
+        // // background: linear-gradient(
+        // //     to right bottom,
+        // //     rgba($navbar, 0.8),  
+        // //     rgba($link, 1)
+        // //     rgba(#111, 0.6),
+        // // ); 
+
+        // background: linear-gradient(
+        //     to right bottom,
+        //     rgba($navbar, 0.8),  
+        //     rgba($link, .5)
+        // );
+    }
+
+    &-menu {
+        // width: 100%;
+        // max-width: 1200px; // 900px;
+        // margin: 0 auto;
+        // text-align: center;
+
+        @extend %flex-column;
 
         @include break(768px) {
             flex-direction: row;
@@ -32,10 +90,9 @@
         z-index: 999;
         outline: none;
         border: none;
-        background-color: transparent;
+        background-color: transparent; // $navbar
         
         /* Trial Styles */
-        // background-color: $navbar; // transparent;
         padding: 10px;
         border-radius: 10px;
         box-shadow: 1px 1px 1px #333;
@@ -117,115 +174,21 @@
         /* ANIMATIONS TESTING END */
 
 
-
-        
         @include break(768px) {
             // background-color: transparent; 
             width: 100%;
             opacity: 1;
             top: 0;
-            display: flex;
-            justify-content: space-evenly;
             position: initial;
             top: 0;
             left: 0;
-            // transform: translate(0, 0);
-        }
-
-        &.hide {
-            // @include break(768px) {
-                
-                -webkit-transition: all 300ms ease-in-out;
-                -moz-transition: all 300ms ease-in-out;
-                transition: all 300ms ease-in-out;
-                
-
-                /* ANIMATIONS TESTING START */
-
-                // background-color: $navbar;
-                // top: 0;
-                // right: 0;
-                // left: 0;
-                // width: 100%;
-                // opacity: 1;
-                // animation: navSliderHide .3s linear .2s reverse;
-
-                // display: none;
-                opacity: 0;
-                width: 0;
-                transform: translate(95vw, -100%); // scale(.5); // 100vw, -100% // 100%, -100% // 90vw, -100%
-
-                /* ANIMATIONS TESTING END */
-
-                @include break(768px) {
-                    opacity: 1;
-                    width: 100%;
-                    transform: translate(0, 0);
-                }
-
-
-
-            // }
-        }
-
-        /* When Hamburger Icon is Clicked and Nav Menu Appears */
-        &.show {
-            -webkit-transition: all 300ms ease-in-out;
-            -moz-transition: all 300ms ease-in-out;
-            transition: all 300ms ease-in-out;
-            background-color: $navbar; // $darkest-blue;
-            text-align: center;
-            
-            
-            display: block;
-            opacity: 1;
-            width: 100%;
-            transform: translate(0, 0); // scale(.9);
-            // animation: navSlider .3s linear .2s forwards; // 3000ms
-
-            
-            // // background: linear-gradient(
-            // //     to right bottom,
-            // //     rgba($navbar, 0.8),  
-            // //     rgba($link, 1)
-            // //     rgba(#111, 0.6),
-            // // ); 
-
-            // background: linear-gradient(
-            //     to right bottom,
-            //     rgba($navbar, 0.8),  
-            //     rgba($link, .5)
-            // ); 
-
-            //     // rgba($navbar, .9),
-            // width: 100%;
-            // opacity: 1;
-
-            li.nav-item a.nav-link {
-                // width: 100vw;
-                // font-size: 1.6rem;
-                // padding: 0.7rem 1.5rem;
-                // &:hover {
-                //     color: $activeLink; // $baby-blue;
-                //     background: $link; // $dark-blue;
-                //     border-radius: 0;
-                // }
-            }
         }
     }
 
     /* List Items Contained in the Navigation Bar */
     li.nav-item {
-        // display: block;
         width: 100%;
-        // text-align: center;
-        // // padding: 5px 7px;
 
-        // @include break(768px) {
-        //     display: inline-block;
-        //     // width: 15%;
-        // }
-        
         &.active a.nav-link {
             color: $activeLink; // $dark-blue;
 
@@ -264,11 +227,9 @@
             // width: 100%;
 
             &:hover {
-                // border-radius: 10px;
                 color: $activeLink; // $baby-blue;
                 background: $link; // $dark-blue;
-                border-radius: 0;
-                // width: 100%;
+                // border-radius: 0;
 
                 @include break(768px) {
                     background: none;
@@ -277,7 +238,6 @@
             }
 
             @include break(768px) {
-                // width: 40%;
                 width: initial;
             }
 
@@ -320,10 +280,6 @@
     }
 }
 
-// li.active .border-bottom-animation::after {
-//     background-color: $activeLink; // $dark-blue;
-// }
-
 /* Custom Class Added When Screen is Scrolled, to Give Navigation Menu a Background */
 .top-nav-scroll {
     padding: 10px 0;
@@ -352,4 +308,9 @@
     right: 0;
     left: 0;
     z-index: 9999;
+    height: 0;
+
+    @include break(768px) {
+        height: initial;
+    }
 }

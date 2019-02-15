@@ -1,0 +1,67 @@
+/* Button Styles */
+.btn {
+    padding: .7rem;
+    margin: .7rem;
+    color: $link;
+    border-radius: 20px; // 20px; // 5px
+    text-decoration: none;
+    box-shadow: 2px 2px 5px #444;
+    font-size: 1rem;
+    border: 2px solid $activeLink;
+    transition: all .3s;
+    outline: none;
+
+    &:active {
+        padding: .68rem;
+        font-size: .94rem;
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 3px #444;
+    }
+
+    &-link {
+        background-color: $link;
+        color: $navbar;
+
+        &:hover,
+        &:focus {
+            color: $link;
+            background-color: $activeLink;
+        }
+    }
+
+    &-primary {
+        background-color: $navbar;
+
+        &:hover,
+        &:focus {
+            color: $navbar;
+            background-color: $link;
+            border-color: $activeLink;
+        }
+    }
+
+    &-secondary {
+        background-color: $activeLink;
+
+        &:hover,
+        &:focus {
+            color: $navbar;
+            background-color: $link;
+            border-color: $activeLink;
+        }
+    }
+
+    &-submit {
+        color: $navbar;
+        margin-left: 1px;
+        border-radius: 5px;
+        background-color: $link;
+        border-color: $borderColor;
+
+        &:hover,
+        &:focus {
+            color: $link;
+            background-color: $activeLink;
+        }
+    }
+}

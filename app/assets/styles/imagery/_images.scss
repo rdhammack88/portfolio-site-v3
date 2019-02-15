@@ -1,0 +1,76 @@
+/* Generic Imaging */ 
+.home-img {
+    border-radius: 50%; // 20%
+    width: 100%;
+    height: 100%;
+
+    &-holder {
+        transform: translate(-2%, 65%); // 105%); // 65%;
+        padding: 10px;
+        border-radius: 50%; // 20%
+        max-width: 200px;
+        max-height: 200px;
+        background-color: $light-white;
+
+        @include break(768px) {
+            transform: translate(-2%, -100%);
+        }
+    }
+}
+
+.logo {
+    display: none;
+
+    @include break(768px) {
+        display: block;
+    }
+}
+
+i.material-icons {
+    font-size: 20px;
+    vertical-align: sub;
+}
+
+/* Section Imaging */ 
+.home-wrapper {
+    background-color: $navbar;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(#111, 0.8),  
+            rgba(#111, 0.6)
+        ), url($background-image-3); // $background-image-3
+    background-position: 30% 40%; // center bottom;
+
+    @extend %backgroundImage;
+    @include break(992px) {
+        background-position: 80% 50%; // 30% 50%; // center right;
+    }
+}
+
+.skills-container {
+    background-color: $navbar;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($navbar, 0.8),  
+        rgba($navbar, 0.6)
+    ),  url($background-image-5);  // $background-image-7
+    background-position: center 0;
+
+    @extend %backgroundImage;
+
+    @include break(768px) {
+        background-position: center center;
+    }
+}
+
+.contact {
+    background-color: $navbar;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($navbar, 0.8),  
+            rgba($navbar, 0.6)
+    ),  url($background-image-4); // $background-image-6
+    background-position: 0 0;
+
+    @extend %backgroundImage;
+}

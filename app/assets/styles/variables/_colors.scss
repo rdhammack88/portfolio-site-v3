@@ -1,0 +1,38 @@
+/***** Site Colors *****/
+
+/* Light Colors */
+$light-white: #eeeeee;
+$light-gray: #cccccc;
+$light-blue: #68d8f5;
+$baby-blue: lighten(#045, 30%);
+$light-goldenrod: lighten(goldenrod, 20%);
+
+/* Normal Colors */
+$blue: #004455;
+$gray: #3f494c;
+$salmon-red: #dc3545;
+$salmon-pink: #ec848b;
+$heart-red: rgb(230, 84, 84);
+$heart-red-alpha: rgba(230, 84, 84, 0.863);
+$cyan:    #17a2b8 !default;
+
+/* Dark Colors */
+$dark-goldenrod: darken($light-goldenrod, 20%);
+$dark-cyan: darken($cyan, 20%);
+$dark-blue: #004455;
+$darker-blue: #022933;
+$darkest-blue: #0f1e32;
+$darker-gray: #42423e;
+
+/* Theme Colors */
+$primary-dark: darken($salmon-red, 20%);
+$primary-light: $salmon-red;
+$secondary-dark: darken($heart-red, 20%);
+$secondary-light: $heart-red;
+
+$navbar: #222; // $darkest-blue; // $secondary-light; // rgba($secondary-light, .8);
+
+$link: $light-white;
+$activeLink: #9E005D; // $dark-goldenrod; //
+
+$borderColor: rgba(0,0,0,0.6);
