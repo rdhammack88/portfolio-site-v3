@@ -23,17 +23,16 @@ sass.compiler = require('node-sass');
  */
 gulp.task('styles', () => {
     return gulp
-            .src('./app/assets/styles/main.scss')
-            // .pipe(sourcemaps.init())
+            .src('./app/assets/styles/**/*.scss')
+            .pipe(sourcemaps.init())
             .pipe(sass({
                 // outputStyle: 'expanded'
                 outputStyle: 'compressed'
-            }))
+            }).on('error', sass.logError))
             .pipe(prefixer({
                 browsers: ['last 10 versions']
             }))
-            .on('error', sass.logError)
-            // .pipe(sourcemaps.write())
+            .pipe(sourcemaps.write())
             .pipe(rename('styles.min.css'))
             .pipe(gulp.dest('./app/temp/styles'))
             ;
