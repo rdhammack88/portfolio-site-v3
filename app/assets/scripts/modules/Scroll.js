@@ -45,7 +45,7 @@ function animateProgress() {
         $('.progress-ring circle:nth-of-type(2)').removeClass();
     } else if (
         $(window).scrollTop() <=
-        $('.bio-wrapper').offset().top - $(window).height() / 2
+        $('.about').offset().top - $(window).height() / 2
     ) {
         $('.progress-ring circle:nth-of-type(2)').removeClass();
     } else {
