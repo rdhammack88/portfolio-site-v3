@@ -78,11 +78,13 @@
 
         @include break(768px) {
             flex-direction: row;
+            justify-content: space-between;
         }
     }
 
     /* Mobile Toggler Hamburger Button */
     &-toggler {
+        cursor: pointer;
         display: block;
         position: fixed;
         top: 10px;

@@ -2,9 +2,15 @@
 .about {
     // padding-top: 150px;
 
-    .bio-wrapper {
-        // background-color: $navbar; // $primary-dark;
+    .about-bio {
+        // width: 100%;
+        // text-align: center;
+        
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
         color: #111; // $activeLink; // $light-white;
+        // background-color: $navbar; // $primary-dark;
         // width: 100vw;
         // min-height: 550px;
         // margin-top: -148px;
@@ -55,7 +61,10 @@
         // background-size: cover;
         // background-position: 0 0; // 30% 40%; // center bottom;
         // background-attachment: fixed;
-        height: 40vh;
+
+
+        // height: 40vh;
+        // height: 80vh;
         margin-top: 5rem;
         color: $light-white;
 
@@ -63,15 +72,22 @@
         // justify-content: center;
         // align-items: center;
         // flex-direction: column;
-
+        
         @extend %flex-column;
+        // justify-content: space-around;
+
         // @include clipPath() {
         //     -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
         //     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
         //     height: 70vh;
         // }
 
-        @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 70vh);
+        @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 100vh);
+        // @include polygonClipPath('0 0, 100% 40%, 100% 100%, 0 55%', 100vh);
+
+        @include break(768px) {
+            height: 70vh;
+        }
 
         // @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
         //     // @include break(768px) {
@@ -99,10 +115,12 @@
         .progress-container {
             // width: 100%;
             max-width: 900px;
+            // margin: 0 auto;
+            // text-align: center;
             
-            @extend %flex;
+            @extend %flex-row;
             flex-wrap: wrap;
-            // justify-content: space-evenly;
+            justify-content: space-evenly;
 
             .progress {
                 position: relative;

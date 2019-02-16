@@ -1,21 +1,31 @@
 /* Button Styles */
 .btn {
-    padding: .7rem;
-    margin: .7rem;
+    display: inline-block;
+    padding: .4rem;
+    margin: .4rem;
     color: $link;
     border-radius: 20px; // 20px; // 5px
     text-decoration: none;
     box-shadow: 2px 2px 5px #444;
     font-size: 1rem;
     border: 2px solid $activeLink;
-    transition: all .3s;
+    transition: color .3s, background-color .3s;
     outline: none;
 
     &:active {
-        padding: .68rem;
-        font-size: .94rem;
-        transform: translate(1px, 1px);
+        // padding: .35rem;
+        // font-size: .94rem;
+        transform: translate(2px, 2px);
         box-shadow: 1px 1px 3px #444;
+
+        @include break(768px) {
+            padding: .68rem;
+        }
+    }
+
+    @include break(768px) {
+        padding: .7rem;
+        margin: .7rem;
     }
 
     &-link {

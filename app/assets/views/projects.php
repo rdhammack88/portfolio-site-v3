@@ -17,16 +17,16 @@
 
 				<div class="card">
 					<div class="card-heading">
-						<img src="<?php echo $project['projectimage']; ?>" alt="<?php echo $project['projectimage']; ?> Project Image" class="project-image" title="<?php echo $project['projectname']; ?>">
+						<img src="<?php echo $project['projectimage']; ?>" alt="<?php echo $project['projectimage']; ?> Project Image" class="card-image" title="<?php echo $project['projectname']; ?>">
 					</div>
                     
 					<div class="card-body">
                         <h3 class="card-title">
                             <?php echo $project['projectname']; ?>
                         </h3>
-						<div>
-                            <p class="mt-3 mb-1 text-justify"><strong>Technologies:</strong> <?php echo $project['techused']; ?></p>
-                            <p  class="text-justify"><strong>Description:</strong> <?php echo $project['description']; ?></p>
+						<div class="card-body__description">
+                            <p class=""><strong>Technologies:</strong> <?php echo $project['techused']; ?></p>
+                            <p  class=""><strong>Description:</strong> <?php echo $project['description']; ?></p>
         
 
         <?php if ($project['completed'] === 'false') {

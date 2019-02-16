@@ -1,13 +1,13 @@
 /* Container Styles */
 .container {
     width: 100%; // 100%;
-    max-width: 1200px; // 900px;
+    max-width: 900px; // 900px;
     margin: 0 auto;
     text-align: center;
 
-    @include break(768px) {
-        width: 90%;
-    }
+    // @include break(768px) {
+    //     width: 90%;
+    // }
 }
 
 /* Override Bootstrap styles to remove margin on mobile devices */
