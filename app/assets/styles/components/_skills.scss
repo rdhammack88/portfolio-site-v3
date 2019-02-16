@@ -7,7 +7,7 @@ $skills: (
 );
 
 @each $skill, $percent in $skills {
-    .#{$skill}-progress-ring {
+    .#{$skill}-skills-progress__ring {
         stroke: $activeLink; // $primary-light; // $dark-blue;
         stroke-width: 16px;
         $PI: 3.141592653589793;

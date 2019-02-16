@@ -1,65 +1,64 @@
 /* Footer Styles */
 footer {
-    background: $navbar; // rgba($navbar, .2); // $navbar; // $darkest-blue;
-    padding: 6rem 0 25px;
+    margin-top: -8rem;
     position: relative;
+    padding: 10rem 0 3.5rem;
+    background: $navbar;
     
-    @include polygonClipPath('0 0, 50% 4rem, 100% 0, 100% 100%, 0 100%');
+    @include polygonClipPath('0 0, 50% 25%, 100% 0, 100% 100%, 0 100%');
 
     h5 {
-        font-size: 1.4rem;
+        font-size: 2.5rem;
+        margin: 0 0 1.5rem;
         color: $light-white;
-        margin-top: 0;
-        margin-bottom: 1rem;
     }
 
     .follow-links {
-        display: flex;
-        justify-content: center;
-        align-content: center;
         margin: 0;
-    }
 
-    .follow-links-btn {
-        // padding: 0.3em 0.7em;
-        padding: .6rem;
-        color: white;
-        background: $darker-gray;
-        border-radius: 50%;
-        margin: 3px 10px;
-        transition: all 500ms ease;
-        
         @extend %flex;
 
-        &:hover {
-            background-color: $activeLink;
+        &-btn {
+            // padding: 0.3em 0.7em;
+            color: white;
+            padding: 1rem;
+            margin: 0 1.5rem;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            background: $darker-gray;
+            transition: all 500ms ease;
+            
+            @extend %flex;
+
+            &:hover {
+                background-color: $activeLink;
+            }
         }
     }
 
     .copyright {
-        margin: 0;
-        margin-top: 1.2rem;
+        margin: 1.5rem 0 0;
         color: $light-white;
         font-weight: 700;
-        font-size: 1.3rem;
+        font-size: 2.2rem;
 
         .heart {
-            padding: 0 5px;
+            padding: 0 1rem;
             color: $heart-red;
-            font-size: 1.4rem;
+            font-size: 1.5em;
         }
     }
 
     .top-scroll__btn {
-        position: absolute;
+        color: $gray;
+        font-size: 2rem;
         right: 2%;
         top: 10%;
-        color: $gray;
-        font-size: 1rem;
+        position: absolute;
         transition: all 500ms ease;
 
-        .fa-arrow-circle-up:hover {
-            color: $activeLink; // $baby-blue;
+        &:hover {
+            color: $activeLink;
         }
     }
 }

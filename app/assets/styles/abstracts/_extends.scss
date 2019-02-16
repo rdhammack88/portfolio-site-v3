@@ -1,15 +1,15 @@
 /* Extends Styles */
 %backgroundImage {
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 %flex {
     display: flex;
-    justify-content: center;
+    align-items: center; /* Vertical Alignment */
     align-content: center;
-    align-items: center;
+    justify-content: center; /* Horizontal Alignment */
 }
 
 %flex-row {

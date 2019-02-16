@@ -1,5 +1,5 @@
 /* Typography Styles */
-body {
+:root {
     font-size: 62.5%; // 16px;
 }
 
@@ -19,15 +19,5 @@ a {
 }
 
 h2 {
-    font-size: 3rem;
-    margin: 3rem 0;
+    font-size: 4rem;
 }
-
-// .card {
-//     &-title {
-//         font-size: 2rem;
-//     }
-//     &-body__description {
-//         font-size: 1.3rem;
-//     }
-// }

@@ -6,7 +6,7 @@
 
     &-holder {
         transform: translate(-2%, 65%); // 105%); // 65%;
-        padding: 10px;
+        padding: 1rem; // 10px;
         border-radius: 50%; // 20%
         max-width: 200px;
         max-height: 200px;
@@ -27,7 +27,7 @@
 }
 
 i.material-icons {
-    font-size: 20px;
+    font-size: 2rem; // 20px;
     vertical-align: sub;
 }
 
@@ -38,7 +38,7 @@ i.material-icons {
             to right bottom,
             rgba(#111, 0.8),  
             rgba(#111, 0.6)
-        ), url($background-image-3); // $background-image-3
+        ), url($background-image-3);
     background-position: 30% 40%; // center bottom;
 
     @extend %backgroundImage;
@@ -47,7 +47,7 @@ i.material-icons {
     }
 }
 
-.skills-container {
+.skills {
     background-color: $navbar;
     background-image: linear-gradient(
         to right bottom,

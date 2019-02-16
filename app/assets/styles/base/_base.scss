@@ -16,8 +16,8 @@ html, body {
 }
 
 a {
-    text-decoration: none;
     color: $light-white;
+    text-decoration: none;
 }
 
 ul {
@@ -27,4 +27,8 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+h2 {
+    margin: 0 0 3rem;
 }

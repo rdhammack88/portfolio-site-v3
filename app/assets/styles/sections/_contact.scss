@@ -1,8 +1,6 @@
 /* Contact Form Styles */
 .contact {
-    padding-top: 13rem;
-    padding-bottom: 13rem;
-    margin-bottom: -7rem;
+    padding: 20rem 0 18rem;
 
     @extend %flex;
 
@@ -14,7 +12,7 @@
 
     .required-text {
         color: $link; // $salmon-red
-        font-size: 1.3em;
+        font-size: 2rem;
     }
 
     small {
@@ -24,22 +22,22 @@
     input[type="text"],
     textarea {
         width: 100%;
-        padding: 5px;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        border-radius: 5px;
+        padding: 1rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        border-radius: 1rem;
         border: 2px solid $borderColor; // $light-gray;        
 
         &:focus {
             outline-color: $activeLink;
-            border: .2rem solid $activeLink;
+            border: 3px solid $activeLink;
         }
 
         &::-webkit-input-placeholder,
         ::placeholder {
             font-family: $font-secondary;
             font-weight: lighter;
-            font-size: 1.2rem;
+            font-size: 2rem;
             color: $navbar; // $borderColor; // red;
             margin: 0;
         }
@@ -54,16 +52,16 @@
     label {
         width: 100%;
         color: $link;
-        font-size: 1.3rem;
+        display: block;
+        font-size: 2rem;
         font-weight: 700;
         text-align: left;
-        margin-left: .3rem; // .4rem
-        display: block;
+        margin-left: 1rem;
         transition: all .5s;
     }
 
     .form {
-        width: 80vw; // 70vw;
+        width: 80vw;
         max-width: 500px;
         margin: 0 auto;
 
@@ -76,21 +74,10 @@
             flex-wrap: wrap;
             flex-direction: column-reverse;
             margin-bottom: 1rem;
-
-            // label {
-            //     width: 100%;
-            //     color: $link;
-            //     font-size: 1.3rem;
-            //     font-weight: 700;
-            //     text-align: left;
-            //     margin-left: .3rem; // .4rem
-            //     display: block;
-            //     transition: all .5s;
-            // }
         }
 
         &-footer {
-            font-size: 1.1rem;
+            padding-left: .5rem;
             text-align: left;
         }
     }

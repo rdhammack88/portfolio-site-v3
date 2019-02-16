@@ -1,160 +1,79 @@
 /* About Section Styles */
 .about {
-    // padding-top: 150px;
+    padding-top: 5rem;
 
-    .about-bio {
-        // width: 100%;
-        // text-align: center;
-        
+    &-bio {
         width: 80%;
         max-width: 600px;
         margin: 0 auto;
-        color: #111; // $activeLink; // $light-white;
-        // background-color: $navbar; // $primary-dark;
-        // width: 100vw;
-        // min-height: 550px;
-        // margin-top: -148px;
+        color: $boxShadow; // #111;
         
-        p.self-bio {
+        &__text {
+            margin: 3rem 0 4rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-top: 3rem;
-            margin-bottom: 4rem;
-            font-size: 1.25rem;
         }
+    }
+}
 
-        // @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
-        //     // -webkit-clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 30vh);
-        //     // clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 30vh);
-            
-        //     // -webkit-clip-path: polygon(0 0, 100% 10vh, 100% 60vh, 0 50vh);
-        //     // clip-path: polygon(0 0, 100% 10vh, 100% 60vh, 0 50vh);
-        //     // height: 60vh;
-        // }
+.skills {
+    // margin-top: 5rem;
+    color: $light-white;
+
+    @extend %flex-column;
+    
+    @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 100vh);
+    // @include polygonClipPath('0 0, 100% 40%, 100% 100%, 0 55%', 100vh);
+
+    @include break(768px) {
+        height: 70vh;
     }
 
-    .resumeLinkGridItem {
-        // // background-color: $link; // $navbar; // $primary-dark;
-        // // color: $activeLink; // $light-white;
-        // // height: 20vh;
-        // // width: 100vw;
-        // // text-align: center;
-
-        // .btn-dark {
-        //     background-color: $navbar; // $activeLink; // $dark-cyan;
-        //     > i.material-icons {
-        //         font-size: 20px;
-        //         vertical-align: sub;
-        //     }
-        // }
+    &-container {
+        @extend %flex-row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
-    .skills-container {        
-        // // width: 100vw !important;
-        // // margin: 10vh 0;
-        // // padding: 100px 0;
-        // // background-color: $navbar; // $light-blue;
-        // background-image: linear-gradient(
-        //     to right bottom,
-        //     rgba($navbar, 0.8),  
-        //     rgba($navbar, 0.6)
-        // ),  url("../../../assets/images/mountain1-md-res.jpg");
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // background-position: 0 0; // 30% 40%; // center bottom;
-        // background-attachment: fixed;
 
+    &-progress {
+        position: relative;
 
-        // height: 40vh;
-        // height: 80vh;
-        margin-top: 5rem;
-        color: $light-white;
-
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
+        &__ring {
+            width: 150px;
+            height: 150px;
+        }
         
-        @extend %flex-column;
-        // justify-content: space-around;
-
-        // @include clipPath() {
-        //     -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
-        //     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
-        //     height: 70vh;
-        // }
-
-        @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 100vh);
-        // @include polygonClipPath('0 0, 100% 40%, 100% 100%, 0 55%', 100vh);
-
-        @include break(768px) {
-            height: 70vh;
+        &__outline {
+            fill: $light-white;
         }
 
-        // @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
-        //     // @include break(768px) {
-        //         // -webkit-clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
-        //         // clip-path: polygon(0 0, 100% 20vh, 100% 90vh, 0 70vh);
-        //         // height: 90vh;
-        //         -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
-        //         clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
-        //         height: 70vh;
-        //     // }
-        // }
+        &__label {
+            top: 25px;
+            width: 100px;
+            height: 100px;
+            font-size: 2rem;
+            position: absolute;
+            border-radius: 50%;
+            color: $light-white;
+            background-color: $navbar; // $primary-dark; // $salmon-pink;
+            transform: translateX(25%);
 
-        .skills-title {
-            margin-top: 0;
-            margin-bottom: 2rem;
-        }
+            @extend %flex;
 
-        // p.skills-description {
-        //     font-size: 0.9rem;
-        //     letter-spacing: 0.1rem;
-        //     padding-top: 1.2rem;
-        //     border-top: 1px solid $light-white;
-        // }
-
-        .progress-container {
-            // width: 100%;
-            max-width: 900px;
-            // margin: 0 auto;
-            // text-align: center;
-            
-            @extend %flex-row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-            .progress {
-                position: relative;
-                svg.progress-ring {
-                    height: 150px;
-                    width: 150px;
-                    .progress-outline {
-                        fill: $light-white;
-                    }
-                }
-                .label {
-                    color: $light-white;
-                    background-color: $navbar; // $primary-dark; // $salmon-pink;
-                    height: 100px;
-                    width: 100px;
-                    border-radius: 50%;
-                    font-size: 2rem;
-                    position: absolute;
-                    top: 25px;
-                    transform: translateX(25%);
-
-                    @extend %flex;
-                    // // left: 40px;
-                    // display: flex;
-                    // /* Vertical Alignment */
-                    // align-items: center;
-                    // /* Horizontal Alignment */
-                    // justify-content: center;
-                    * { // .percentage
-                        font-size: 3rem; // 4rem;
-                        // vertical-align: super;
-                    }
-                }
+            * {
+                font-size: 5rem;
             }
+        }
+
+        &__description {
+            width: 50%;
+            margin: 0 auto;
+            // font-size: 1.2rem;
+            // padding-top: 1.2rem;
+            
+            // font-size: 0.9rem;
+            // letter-spacing: 0.1rem;
+            // border-top: 1px solid $light-white;
         }
     }
 }

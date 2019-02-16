@@ -1,31 +1,27 @@
 /* Button Styles */
 .btn {
-    display: inline-block;
-    padding: .4rem;
-    margin: .4rem;
     color: $link;
-    border-radius: 20px; // 20px; // 5px
-    text-decoration: none;
-    box-shadow: 2px 2px 5px #444;
-    font-size: 1rem;
-    border: 2px solid $activeLink;
-    transition: color .3s, background-color .3s;
     outline: none;
-
-    &:active {
-        // padding: .35rem;
-        // font-size: .94rem;
-        transform: translate(2px, 2px);
-        box-shadow: 1px 1px 3px #444;
-
-        @include break(768px) {
-            padding: .68rem;
-        }
-    }
+    margin: 1rem;
+    padding: .7rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid $activeLink;
+    box-shadow: 2px 2px 5px $boxShadow;
+    transition: color .3s, background-color .3s, scale .3s;
 
     @include break(768px) {
-        padding: .7rem;
-        margin: .7rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    &:active {
+        backface-visibility: hidden;
+        transform: translate(1px, 2px);        
+        // transform: translateY(2px);
+        box-shadow: 1px 1px 3px $boxShadow;
     }
 
     &-link {
@@ -64,7 +60,7 @@
     &-submit {
         color: $navbar;
         margin-left: 1px;
-        border-radius: 5px;
+        border-radius: 1rem;
         background-color: $link;
         border-color: $borderColor;
 

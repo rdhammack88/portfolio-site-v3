@@ -1,171 +1,114 @@
 <!-- About Me Section -->
 <section id="about" class="about">
-    <div class="container">
-        <!-- Bio Wrapper -->
-        <div class="about-bio">
-                <!-- <div> -->
-                    <h2 class="">Who am I?</h2> <!-- text-center -->
-                    <p class="self-bio">
-                        I am a self taught, self motivated, 
-                        self driven technology enthusiast 
-                        with a passion emphasis on
-                        Programming and IT Networking. 
-                        I have worked in the Telecommunications 
-                        Industry for the past 8 years, 
-                        and for the past 18 months I have been 
-                        developing mobile first, dynamic web
-                        applications, and web sites. 
-                        I spend the majority of my time coding, 
-                        and learning all I can about
-                        web development technologies. 
-                        When I'm not developing web applications, 
-                        you can find me either skateboarding or 
-                        hanging out with friends and family.
-                    </p>
-                <!-- </div> -->
+    <div class="container"> <!-- .container -->
+        <div class="about-bio"> <!-- Bio Wrapper -->
+            <h2 class="section-title">Who am I?</h2> <!-- text-center -->
+            <p class="about-bio__text">
+                I am a self taught, self motivated, 
+                self driven technology enthusiast 
+                with a passion emphasis on
+                Programming and IT Networking. 
+                I have worked in the Telecommunications 
+                Industry for the past 8 years, 
+                and for the past 18 months I have been 
+                developing mobile first, dynamic web
+                applications, and web sites. 
+                I spend the majority of my time coding, 
+                and learning all I can about
+                web development technologies. 
+                When I'm not developing web applications, 
+                you can find me either skateboarding or 
+                hanging out with friends and family.
+            </p>
         </div> <!-- Bio Wrapper -->
+    </div> <!-- .container -->
 
-        <!-- resumeLinkGridItem Container -->
+    <!-- resumeLinkGridItem Container -->
+    <div class="container">
+        <div class="text-center resumeLinkGridItem">
+        <!-- <div class="row"> -->
+            <a href="../../assets/DustinHammack-Resume.pdf" class="btn btn-secondary"
+                download title="Download PDF Resume">
+                <i class="fa fa-download"></i> R&eacute;sum&eacute;
+            </a>
+            <a href="https://github.com/rdhammack88" class="btn btn-primary"
+                target="_blank" title="Github Profile">
+                <i class="fab fa-github fa-1x"></i> Github
+            </a>
+            <!-- <a href="https://pastebin.com/u/rdhammack" class="btn btn-primary"
+                target="_blank" title="Pastebin Profile">
+                <i class="material-icons">developer_mode</i> Pastebin
+            </a> -->
+        </div> <!-- resumeLinkGridItem -->
+        <!-- </div> Links Row -->
+    </div> <!-- resumeLinkGridItem Container -->
+
+    <div class="skills">
         <div class="container">
-            <div class="text-center resumeLinkGridItem">
-            <!-- <div class="row"> -->
-                <a href="../../assets/DustinHammack-Resume.pdf" class="btn btn-secondary"
-                    download title="Download PDF Resume">
-                    <i class="fa fa-download"></i> R&eacute;sum&eacute;
-                </a>
-                <a href="https://github.com/rdhammack88" class="btn btn-primary"
-                    target="_blank" title="Github Profile">
-                    <i class="fab fa-github fa-1x"></i> Github
-                </a>
-                <!-- <a href="https://pastebin.com/u/rdhammack" class="btn btn-primary"
-                    target="_blank" title="Pastebin Profile">
-                    <i class="material-icons">developer_mode</i> Pastebin
-                </a> -->
-            </div> <!-- resumeLinkGridItem -->
-            <!-- </div> Links Row -->
-        </div> <!-- resumeLinkGridItem Container -->
-
-    </div>
-    
-
-    <div class="skills-container">
-        <div class="container">
-            <h2 class="skills-title">Skills</h2> <!-- text-center  -->
-            <div class="progress-container container">
-                <!-- HTML Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="html-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-progress"> <!-- HTML Progress -->
+                    <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="html-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
                     </svg>
-                    <!-- <span class="label">
-                        85 <span class="percentage">%</span>
-                    </span> -->
-                    <!-- <h4 class="mt-4"><i class="fab fa-html5"></i> HTML5</h4> -->
-                    <span class="label">
+
+                    <span class="skills-progress__label">
                         <i class="fab fa-html5"></i>
                     </span>
-                    <!-- <p class="skills-description">
+                    
+                    <!-- <p class="skills-progress__description">
                         Using HTML5 to semantically markup web documents.
                     </p> -->
                 </div> <!-- HTML Progress -->
-                <!-- CSS Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="css-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
+                
+                <div class="skills-progress"> <!-- CSS Progress -->
+                    <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="css-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
                     </svg>
-                    <!-- <span class="label">
-                        85 <span class="percentage">%</span>
-                    </span> -->
-                    <!-- <h4 class="mt-4"><i class="fab fa-css3-alt"></i> CSS3</h4> -->
-                    <span class="label">
+
+                    <span class="skills-progress__label">
                         <i class="fab fa-css3-alt"></i>
                     </span>
-                    <!-- <p class="skills-description">
+
+                    <!-- <p class="skills-progress__description">
                         Style webpages using the latest and greatest.
                     </p> -->
                 </div> <!-- CSS Progress -->
-                <!-- JavaScript Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="javascript-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
+                
+                <div class="skills-progress"> <!-- JavaScript Progress -->
+                    <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="javascript-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
                     </svg>
-                    <!-- <span class="label">
-                        75 <span class="percentage">%</span>
-                    </span> -->
-                    <!-- <h4 class="mt-4"><i class="fab fa-js-square"></i> JavaScript</h4> -->
-                    <span class="label">
+
+                    <span class="skills-progress__label">
                         <i class="fab fa-js-square"></i>
                     </span>
-                    <!-- <p class="skills-description">
+
+                    <!-- <p class="skills-progress__description">
                         Creation of dynamic web pages using the power of JavaScript, along with libraries and
                         frameworks, such as jQuery &amp; ReactJS.
                     </p> -->
                 </div> <!-- JavaScript Progress -->
-                <!-- PHP Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="php-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
+                
+                <div class="skills-progress"> <!-- PHP Progress -->
+                    <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="php-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
                     </svg>
-                    <!-- <span class="label">
-                        65 <span class="percentage">%</span>
-                    </span> -->
-                    <span class="label">
+
+                    <span class="skills-progress__label">
                         <i class="fab fa-php"></i>
                     </span>
-                    <!-- <h4 class="mt-4"><i class="fab fa-php"></i> PHP</h4> -->
-                    <!-- <p class="skills-description">
+
+                    <!-- <p class="skills-progress__description">
                         Creation of dynamic web pages using PHP &amp; MySQL. Also utilize the power of Laravel
                         Framework.
                     </p> -->
-                </div> <!-- PHP Progress -->
-
-
-
-
-                <!--  -->
-                <!--  -->
-                <!--  -->
-
-
-                <!-- HTML Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="html-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
-                    </svg>
-                    <!-- <span class="label">
-                        85 <span class="percentage">%</span>
-                    </span> -->
-                    <!-- <h4 class="mt-4"><i class="fab fa-html5"></i> HTML5</h4> -->
-                    <span class="label">
-                        <i class="fab fa-html5"></i>
-                    </span>
-                    <!-- <p class="skills-description">
-                        Using HTML5 to semantically markup web documents.
-                    </p> -->
-                </div> <!-- HTML Progress -->
-                <!-- CSS Progress -->
-                <div class="progress">
-                    <svg class="progress-ring">
-                        <circle class="progress-outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
-                        <circle class="css-progress-ring" fill="transparent" r="55" cx="75" cy="75" />
-                    </svg>
-                    <!-- <span class="label">
-                        85 <span class="percentage">%</span>
-                    </span> -->
-                    <!-- <h4 class="mt-4"><i class="fab fa-css3-alt"></i> CSS3</h4> -->
-                    <span class="label">
-                        <i class="fab fa-css3-alt"></i>
-                    </span>
-                    <!-- <p class="skills-description">
-                        Style webpages using the latest and greatest.
-                    </p> -->
-                </div> <!-- CSS Progress -->
-            </div><!-- Progress Container -->
-        </div>
+                </div><!-- PHP Progress -->
+            </div> <!-- .progress-container -->
+        </div> <!-- .container -->
     </div> <!-- Skills Container -->
 </section><!-- About Me Section -->
