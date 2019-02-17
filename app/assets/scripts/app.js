@@ -1,3 +1,5 @@
+/** App.js */
+
 import $ from 'jquery';
 import Events from './modules/Events';
 

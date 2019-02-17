@@ -1,38 +1,42 @@
+/** Events.js */
 import $ from 'jquery';
-import {
-    navbar,
-    navbarLinks,
-    navbarMenu,
-    mobileNavbarIcon,
-    rotatedMobileNavbarIcon} from './Elements';
 
+/** Import Element Variables */
+import {
+    $navbar,
+    $navbarLinks,
+    $navbarMenu,
+    $mobileNavbarIcon} from './Elements';
+
+/** Import Functions from Navbar */
 import {
     // activeLink,
     fixNavbar,
     mobileMenuToggle,
     mobileMenuLink} from './Navbar';
 
+/** Import Functions from Scroll */
 import {
     activeLink,
     addSmoothScrolling,
-    animateProgress,
     windowScroll
 } from './Scroll';
 
 class Events {
+    /** On Init */
     constructor() {
         this.development();
         this.events();
         fixNavbar();
         addSmoothScrolling();
-
     }
 
+    /** Add event listeners on events */
     events() {
         $(window).on('scroll', windowScroll);
-        mobileNavbarIcon.click(mobileMenuToggle);
-        navbarLinks.click(mobileMenuLink);
-        navbarLinks.click(activeLink);
+        $mobileNavbarIcon.click(mobileMenuToggle);
+        $navbarLinks.click(mobileMenuLink);
+        $navbarLinks.click(activeLink);
     }
 
     /** For Development Purposes */
@@ -40,19 +44,16 @@ class Events {
         $(window).on('resize', windowResize);
 
         function windowResize() {
-            // let $navbar = $('.navbar');
-            // let $navbarMenu = $('.navbar-collapse');
-            // console.log('Resizing the window');
             if (window.innerWidth <= 768) {
-                navbar.removeClass('top-nav-scroll');
-                navbarMenu.addClass('hide');
+                $navbar.removeClass('top-nav-scroll');
+                $navbarMenu.addClass('hide');
             }
-            else if (window.innerWidth > 768 && $('.navbar').offset().top > 50) {
-                navbar.addClass('top-nav-scroll');
-                navbarMenu.removeClass('show hide');
+            else if (window.innerWidth > 768 && $navbar.offset().top > 50) {
+                $navbar.addClass('top-nav-scroll');
+                $navbarMenu.removeClass('show hide');
             }
             else if (window.innerWidth > 768) {
-                navbarMenu.removeClass('show hide');
+                $navbarMenu.removeClass('show hide');
             }
         }
     }

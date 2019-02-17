@@ -1,23 +1,27 @@
+/** Scroll.js */
 import $ from 'jquery';
-import smoothScroll from 'jquery-smooth-scroll';
+import {smoothScroll} from 'jquery-smooth-scroll';
+
+/** Import Element Variables */
 import {
-    linkRefs,
-    navbar,
-    navbarLinks,
-    navbarMenu,
-    mobileNavbarIcon,
-    rotatedMobileNavbarIcon
+    $linkRefs,
+    $navbarLinks,
+    $skillsSection,
+    $skillsProgressRing
 } from './Elements';
 import { fixNavbar } from './Navbar';
 
+/**
+ * When 'Nav' links are clicked, smooth scroll to that section
+ */
 function addSmoothScrolling() {
-    navbarLinks.smoothScroll();
+    $navbarLinks.smoothScroll();
 }
 
 /** Add active to nav link based on section top offset */
 function activeLink() {
-    $.each(linkRefs, (indx, val) => {
-        if ($(window).scrollTop() >= ($(val).offset().top - 300)) {
+    $.each($linkRefs, (indx, val) => {
+        if ($(window).scrollTop() >= ($(val).offset().top - 500)) {
             $(`${val}-link`)
                 .parent('li')
                 .addClass('active')
@@ -34,37 +38,49 @@ function activeLink() {
  * set progress back to 0.
  */
 function animateProgress() {
-    /** if window is past skills section */
-    /** else if window is above skills section */
-    /** else if window is centered on skills section */
-    if (
+    // console.log('Should Be Animating!');
+    
+    if ( /** if window is past skills section */
         $(window).scrollTop() >=
-        $('.skills-container').offset().top +
-        $('.skills-container').height()
+        $skillsSection.offset().top +
+        $skillsSection.height()
     ) {
-        $('.progress-ring circle:nth-of-type(2)').removeClass();
-    } else if (
+        $skillsProgressRing.removeClass();
+        // console.log('Should Be Below Skills!');
+    } else if ( /** else if window is above skills section */
         $(window).scrollTop() <=
         $('.about').offset().top - $(window).height() / 2
     ) {
-        $('.progress-ring circle:nth-of-type(2)').removeClass();
-    } else {
+        $skillsProgressRing.removeClass();
+        // console.log('Should Be Above Skills!');
+    } else { /** else if window is centered on skills section */
         let animatedClasses = [
-            'html-progress-ring',
-            'css-progress-ring',
-            'javascript-progress-ring',
-            'php-progress-ring'
+            'html-skills-progress__ring',
+            'css-skills-progress__ring',
+            'javascript-skills-progress__ring',
+            'node-skills-progress__ring',
+            'php-skills-progress__ring'
         ];
-        $('.progress-ring circle:nth-of-type(2)').each(function (i) {
+
+        $('.skills-progress-container').addClass('animateFadeIn');
+        // console.log('Should Be Animating NOW!!!!!!!');
+
+
+        $skillsProgressRing.each(function (i) {
             $(this).addClass(animatedClasses[i]);
+
+            let IE = (navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
+            // console.log(IE);
+            if (IE) {
+                $(this).css({'stroke-dashoffset': '240', 'stroke-dasharray': '250'});
+            }
         });
-        // $('.skills-container').addClass('animateFadeIn');
-        $('.progress-container').addClass('animateFadeIn');
+
+        
+
+
     }
 }
-
-
-
 
 /**
  * With windowScroll function,
@@ -75,7 +91,6 @@ function windowScroll() {
     fixNavbar();
     activeLink();
     animateProgress();
-    // animateProjectsFadeIn();
 }
 
 export {
