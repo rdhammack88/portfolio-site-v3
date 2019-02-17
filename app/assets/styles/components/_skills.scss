@@ -3,21 +3,67 @@ $skills: (
     html: 85,
     css: 85,
     javascript: 75,
-    php: 65
+    node: 20,
+    php: 65,
+    sql: 40
 );
+
+$PI: 3.141592653589793;
+$circumference: (55 * 2 * $PI); // - 100
+
+// stroke-dashoffset: (55 * 2 * 3.141592) - ((20 / 100) * (55 * 2 * 3.141592));
+// stroke-dashoffset: 276.46; // 240
+// stroke-dasharray: 345.575; // 250
+// fill: #000;
 
 @each $skill, $percent in $skills {
     .#{$skill}-skills-progress__ring {
         stroke: $activeLink; // $primary-light; // $dark-blue;
         stroke-width: 16px;
-        $PI: 3.141592653589793;
-        $circumference: (55 * 2 * $PI);
         stroke-dasharray: $circumference $circumference;
         stroke-dashoffset: $circumference;
+        // stroke-dasharray: ($circumference + 100) ($circumference + 100);
+        // stroke-dashoffset: ($circumference + 100);
         animation: progress-#{$skill} 4s linear 1.2s forwards;
         transform: rotate(-90deg);
         transform-origin: 50% 50%;
         $offset: $circumference - (($percent / 100) * $circumference);
+        @-o-keyframes progress-#{$skill} {
+            0% {
+                stroke-dashoffset: $circumference;
+            }
+            50% {
+                stroke-dashoffset: $circumference -
+                    (($percent / 150) * $circumference);
+            }
+            100% {
+                stroke-dashoffset: $offset;
+            }
+        }
+        @-moz-keyframes progress-#{$skill} {
+            0% {
+                stroke-dashoffset: $circumference;
+            }
+            50% {
+                stroke-dashoffset: $circumference -
+                    (($percent / 150) * $circumference);
+            }
+            100% {
+                stroke-dashoffset: $offset;
+            }
+        }
+        @-webkit-keyframes progress-#{$skill} {
+            0% {
+                stroke-dashoffset: $circumference;
+            }
+            50% {
+                stroke-dashoffset: $circumference -
+                    (($percent / 150) * $circumference);
+            }
+            100% {
+                stroke-dashoffset: $offset;
+            }
+        }
         @keyframes progress-#{$skill} {
             0% {
                 stroke-dashoffset: $circumference;
@@ -32,3 +78,7 @@ $skills: (
         }
     }
 }
+
+
+
+

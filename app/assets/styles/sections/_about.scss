@@ -17,12 +17,16 @@
 }
 
 .skills {
-    // margin-top: 5rem;
+    margin: 5rem 0;
+    padding: 5rem 0;
     color: $light-white;
 
     @extend %flex-column;
     
-    @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 100vh);
+    // @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0, 0)) {
+        @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 75%', 100vh);
+
+    // }
     // @include polygonClipPath('0 0, 100% 40%, 100% 100%, 0 55%', 100vh);
 
     @include break(768px) {
@@ -32,11 +36,14 @@
     &-container {
         @extend %flex-row;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: center;
     }
 
     &-progress {
-        position: relative;
+        &-container {
+            position: relative;
+        }
 
         &__ring {
             width: 150px;

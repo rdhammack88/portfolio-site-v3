@@ -1,13 +1,18 @@
 /* Contact Form Styles */
 .contact {
     padding: 20rem 0 18rem;
-
+    
     @extend %flex;
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+        /* IE10+ specific styles go here */  
+        display: block
+    }
 
     @include polygonClipPath('0 0, 100% 25%, 100% 100%, 0 100%');
 
     .section-title {
         color: $link;
+        margin-top: 2rem;
     }
 
     .required-text {
@@ -26,7 +31,7 @@
         font-size: 2rem;
         line-height: 2.5rem;
         border-radius: 1rem;
-        border: 2px solid $borderColor; // $light-gray;        
+        border: 2px solid rgba(0, 0, 0, .8); // #000; // $borderColor; // $light-gray;        
 
         &:focus {
             outline-color: $activeLink;

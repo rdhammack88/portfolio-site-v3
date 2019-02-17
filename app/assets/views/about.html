@@ -25,8 +25,7 @@
 
     <!-- resumeLinkGridItem Container -->
     <div class="container">
-        <div class="text-center resumeLinkGridItem">
-        <!-- <div class="row"> -->
+        <div class="resumeLinkGridItem">
             <a href="../../assets/DustinHammack-Resume.pdf" class="btn btn-secondary"
                 download title="Download PDF Resume">
                 <i class="fa fa-download"></i> R&eacute;sum&eacute;
@@ -40,14 +39,13 @@
                 <i class="material-icons">developer_mode</i> Pastebin
             </a> -->
         </div> <!-- resumeLinkGridItem -->
-        <!-- </div> Links Row -->
     </div> <!-- resumeLinkGridItem Container -->
 
     <div class="skills">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
-                <div class="skills-progress"> <!-- HTML Progress -->
+                <div class="skills-progress-container"> <!-- HTML Progress -->
                     <svg class="skills-progress__ring">
                         <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
                         <circle class="html-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
@@ -62,7 +60,7 @@
                     </p> -->
                 </div> <!-- HTML Progress -->
                 
-                <div class="skills-progress"> <!-- CSS Progress -->
+                <div class="skills-progress-container"> <!-- CSS Progress -->
                     <svg class="skills-progress__ring">
                         <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
                         <circle class="css-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
@@ -77,7 +75,7 @@
                     </p> -->
                 </div> <!-- CSS Progress -->
                 
-                <div class="skills-progress"> <!-- JavaScript Progress -->
+                <div class="skills-progress-container"> <!-- JavaScript Progress -->
                     <svg class="skills-progress__ring">
                         <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
                         <circle class="javascript-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
@@ -92,8 +90,20 @@
                         frameworks, such as jQuery &amp; ReactJS.
                     </p> -->
                 </div> <!-- JavaScript Progress -->
+
+                <div class="skills-progress-container">
+                    <!-- Node Progress -->
+                    <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="node-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
+                    </svg>
                 
-                <div class="skills-progress"> <!-- PHP Progress -->
+                    <span class="skills-progress__label">
+                        <i class="fab fa-node"></i>
+                    </span>
+                </div> <!-- Node Progress -->
+                
+                <div class="skills-progress-container"> <!-- PHP Progress -->
                     <svg class="skills-progress__ring">
                         <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
                         <circle class="php-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
@@ -108,7 +118,19 @@
                         Framework.
                     </p> -->
                 </div><!-- PHP Progress -->
-            </div> <!-- .progress-container -->
+
+                <!-- <div class="skills-progress-container"> -->
+                    <!-- SQL Progress -->
+                    <!-- <svg class="skills-progress__ring">
+                        <circle class="skills-progress__outline" stroke="#045" stroke-width="2" fill="#eee" r="64" cx="75" cy="75" />
+                        <circle class="sql-skills-progress__ring" fill="transparent" r="55" cx="75" cy="75" />
+                    </svg>
+                
+                    <span class="skills-progress__label">
+                        <i class="fas fa-database"></i>
+                    </span>
+                </div> SQL Progress -->
+            <!-- </div> .progress-container -->
         </div> <!-- .container -->
     </div> <!-- Skills Container -->
 </section><!-- About Me Section -->
