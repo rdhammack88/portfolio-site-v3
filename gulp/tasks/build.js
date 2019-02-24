@@ -59,7 +59,7 @@ gulp.task('deleteDist', ['icons'], () => {
 gulp.task('copyGeneral', ['deleteDist'], () => {
     var pathsToCopy = [
         './app/**/*',
-        './app/index.php',
+        // './app/index.php',
         // '!./app/index.php',
         // '!./app/assets/views/**',
         '!./app/assets/images/**',
@@ -132,10 +132,12 @@ gulp.task('deleteExtra',['styles', 'scripts', 'usemin', 'useminStart'], () => {
 gulp.task('usemin', ['styles', 'scripts'], () => {
     console.log('Starting Usemin Task');
     return gulp
-        .src('./app/assets/views/*.html')
-        // .src(['./app/index.php', './app/assets/views/*.html'])
+        .src('./app/**/*.html')
+        // .src('./app/assets/views/*.html')
+        // .pipe(gulp.dest('./dist/assets/views'))
         // .src(['./app/assets/views/header.html', './app/assets/views/footer.html'])
         .pipe(usemin({
+            outputRelativePath: './',
             // First perform revision on CSS file -- Adds caching hash to end of file
             // Then Compress CSS file
             css: [
@@ -179,6 +181,7 @@ gulp.task('usemin', ['styles', 'scripts'], () => {
  * @param  {Task Name} 'build'
  * @param  {Array Dependency} ['deleteDist', 'copyGeneral', 'imageOptimize', 'useminStart']
  */
-gulp.task('build', ['deleteDist', 'imageOptimize', 'useminStart', 'copyGeneral', 'deleteExtra']);
+gulp.task('build', ['deleteDist', 'imageOptimize', 'useminStart', 'copyGeneral']); // , 'deleteExtra'
 
-
+// Gulp v.4
+// gulp.task('build', gulp.series('deleteDist', 'imageOptimize', 'useminStart', 'copyGeneral'));
