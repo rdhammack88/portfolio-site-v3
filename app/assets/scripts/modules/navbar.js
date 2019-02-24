@@ -11,7 +11,7 @@ import {
  * add class to $navbar that changes nav colors
  */
 function fixNavbar() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
         if ($navbar.offset().top > 50) { //} && window.innerWidth > 768) {
             $navbar.addClass('top-nav-scroll');
         } else {

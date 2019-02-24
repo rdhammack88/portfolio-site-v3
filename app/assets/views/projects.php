@@ -17,7 +17,11 @@
 
 				<div class="card">
 					<div class="card-heading">
-						<img src="<?php echo $project['projectimage']; ?>" alt="<?php echo $project['projectimage']; ?> Project Image" class="card-image" title="<?php echo $project['projectname']; ?>">
+                        <!-- No JS Activated -->
+                        <noscript>
+                            <img class="card-image" src="<?php echo $project['projectimage']; ?>" alt="<?php echo $project['projectimage']; ?> Project Image" title="<?php echo $project['projectname']; ?>">
+                        </noscript>
+						<img class="card-image lazyload" data-srcset="<?php echo $project['projectimage']; ?>" alt="<?php echo $project['projectimage']; ?> Project Image" title="<?php echo $project['projectname']; ?>">
 					</div>
                     
 					<div class="card-body">

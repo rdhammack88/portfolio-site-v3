@@ -78,3 +78,29 @@
         height: $height;
     }
 }
+
+@mixin width($width: 100%, $maxwidth: 100%) {
+    width: $width;
+    max-width: $maxwidth;
+}
+
+@mixin ieSupport() {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+        /* IE10+ specific styles go here */
+        @content;
+    }
+}
+
+@mixin edgeSupport12() {
+    @supports(-ms-accelerator: true) {  
+        /* MS Edge 12+ */
+        @content;
+    }
+}
+
+@mixin edgeSupport16() {
+    @supports(-ms-ime-align: auto) {  
+        /* MS Edge 16+ */
+        @content;
+    }
+}

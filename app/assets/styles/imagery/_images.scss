@@ -43,35 +43,69 @@
     background-position: 30% 40%; // center bottom;
 
     @extend %backgroundImage;
-    @include break(992px) {
-        background-position: 80% 50%; // 30% 50%; // center right;
+    @include break(768px) {
+        background-position: bottom bottom; // 50% 100%; // 0 0; // 80% 50%; // 30% 50%; // center right;
     }
 }
 
 .skills {
     background-color: $navbar;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($navbar, 0.8),  
-        rgba($navbar, 0.6)
-    ),  url($background-image-5);  // $background-image-7
     background-position: center 0;
-
+    
     @extend %backgroundImage;
-
+    
     @include break(768px) {
+        background-position: 100% 100%; // center center; // 0 0;
+
+        ::i-block-chrome {
+            background-position: 0 0;    
+        }
+    }
+
+    @include break(1200px) {
         background-position: center center;
     }
 }
 
 .contact {
     background-color: $navbar;
-    background-image: linear-gradient(
-            to right bottom,
-            rgba($navbar, 0.8),  
-            rgba($navbar, 0.6)
-    ),  url($background-image-4); // $background-image-6
     background-position: 0 0;
 
     @extend %backgroundImage;
+
+    @include break(768px) {
+        background-position: 0 0;
+        // background-size: contain;
+    }
 }
+
+///////////** Original background-image properties **/////////////
+
+// .skills {    
+//     // background-image: linear-gradient(to right bottom,rgba(#111, 0.8),rgba(#111, 0.6));
+//     // background-image: linear-gradient(
+//     //     to right bottom,
+//     //     rgba($navbar, 0.8),  
+//     //     rgba($navbar, 0.6)
+//     // ),  url($background-image-5);  // $background-image-7
+// }
+
+// .contact {    
+//     // background-image: linear-gradient(to right bottom,rgba(#111, 0.8),rgba(#111, 0.6));
+//     // background-image: linear-gradient(
+//     //         to right bottom,
+//     //         rgba($navbar, 0.8),  
+//     //         rgba($navbar, 0.6)
+//     // ),  url($background-image-4); // $background-image-6
+// }
+
+
+/////////** Test / Play-arounds **/////////
+
+// linear-gradient(to right bottom, #924040, #555)
+
+// linear-gradient(to right bottom,rgba(33, 23, 88, .5) ,rgba(88, 22, 173, .3), url("../../../assets/images/backgrounds/mountain-4.jpg")
+
+// background-image: linear-gradient(to right bottom,rgba(33, 23, 88, .5), rgba(88, 22, 173, .3)), url(../../../assets/images/backgrounds/mountain-4.jpg)
+
+// background-image: linear-gradient(to right bottom,rgba(33, 23, 88, .5), rgba(88, 22, 173, .7)), url($background-image-3);
