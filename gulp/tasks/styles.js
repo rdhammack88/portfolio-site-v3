@@ -2,6 +2,7 @@
  * Required imports of dependency packages.
  */
 var gulp = require('gulp'),
+    del = require('del'),
     prefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
@@ -13,6 +14,19 @@ var gulp = require('gulp'),
 sass.compiler = require('node-sass');
 
 /**
+ * Task to clean up and remove styles 
+ * file before piping new styles file
+ * to temp directory.
+ *
+ * @param  {Task Name} 'deleteStyles'
+ * @param  {Array Dependency} []
+ * @param  {callback function}
+ */
+gulp.task('deleteStyles', () => {
+    return del('./app/temp/styles/*.css');
+});
+
+/**
  * Task to run "styles" task
  * No dependencies
  * Output style === compressed
@@ -21,7 +35,7 @@ sass.compiler = require('node-sass');
  * @param  {Task Name} 'styles'
  * @param  {callback function}
  */
-gulp.task('styles', () => {
+gulp.task('styles',  () => {
     return gulp
             .src('./app/assets/styles/**/*.scss')
             .pipe(sourcemaps.init())
@@ -33,7 +47,7 @@ gulp.task('styles', () => {
                 browsers: ['last 10 versions']
             }))
             .pipe(sourcemaps.write())
-            .pipe(rename('styles.min.css'))
+            .pipe(rename('styles.css'))
             .pipe(gulp.dest('./app/temp/styles'))
             ;
-});
+});    

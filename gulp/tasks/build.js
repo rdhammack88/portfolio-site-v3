@@ -9,9 +9,9 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    browserSync = require('browser-sync'), //.create(),
-
+    browserSync = require('browser-sync'),
     php = require('gulp-connect-php');
+
 /**
  * Task to preview the dist directory for tests
  * 
@@ -26,10 +26,14 @@ gulp.task('preview', [], () => {
     //         baseDir: 'dist'
     //     }
     // });
-    return php.server({base: 'dist'}, function() {
+    php.server({base: 'dist'}, function() {
         browserSync({
             proxy: '127.0.0.1:8000'
         });
+    });
+
+    gulp.watch(['./dist/**/*.php', './dist/**/*.html']).on('change', function () {
+        browserSync.reload();
     });
 });
 
@@ -108,18 +112,18 @@ gulp.task("imageOptimize", ['deleteDist'], () => {
  */
 gulp.task('useminStart', ['deleteDist'], () => {
     gulp.start('usemin');
-    console.log('Finishing Usemin Task');
+    // console.log('Finishing Usemin Task');
 });
 
 gulp.task('deleteExtra',['styles', 'scripts', 'usemin', 'useminStart'], () => {
-    console.log('Deleting Extra HTML Files!');
+    // console.log('Deleting Extra HTML Files!');
     return del('./dist/*.html');
 });
 
 /**
- * Task to compress and move scripts, stylesheets and
- * index.php to dist directory
- * 
+ * Task to compress and move scripts, 
+ * stylesheets and index.php to dist 
+ * directory 
  *
  * @param  {Task Name} 'usemin'
  * @param  {Array Dependency} ['styles', 'scripts']
@@ -128,19 +132,19 @@ gulp.task('deleteExtra',['styles', 'scripts', 'usemin', 'useminStart'], () => {
 gulp.task('usemin', ['styles', 'scripts'], () => {
     console.log('Starting Usemin Task');
     return gulp
+        .src('./app/assets/views/*.html')
         // .src(['./app/index.php', './app/assets/views/*.html'])
         // .src(['./app/assets/views/header.html', './app/assets/views/footer.html'])
-        .src('./app/assets/views/*.html')
         .pipe(usemin({
             // First perform revision on CSS file -- Adds caching hash to end of file
             // Then Compress CSS file
             css: [
                 function () {
-                    console.log('Revising CSS to Dist Directory');
+                    // console.log('Revising CSS to Dist Directory');
                     return rev();
                 },
                 function () {
-                    console.log('Minifying CSS to Dist Directory');
+                    // console.log('Minifying CSS to Dist Directory');
                     return cssnano();
                 }
             ],
@@ -148,11 +152,11 @@ gulp.task('usemin', ['styles', 'scripts'], () => {
             // Then Compress JS file
             js: [
                 function () {
-                    console.log('Revising JS to Dist Directory');
+                    // console.log('Revising JS to Dist Directory');
                     return rev();
                 },
                 function () {
-                    console.log('Minifying JS to Dist Directory');
+                    // console.log('Minifying JS to Dist Directory');
                     return uglify();
                 }
             ]
@@ -175,6 +179,6 @@ gulp.task('usemin', ['styles', 'scripts'], () => {
  * @param  {Task Name} 'build'
  * @param  {Array Dependency} ['deleteDist', 'copyGeneral', 'imageOptimize', 'useminStart']
  */
-gulp.task('build', ['deleteDist', 'copyGeneral', 'imageOptimize', 'useminStart', 'deleteExtra']);
+gulp.task('build', ['deleteDist', 'imageOptimize', 'useminStart', 'copyGeneral', 'deleteExtra']);
 
 
