@@ -1,6 +1,6 @@
 # Personal-Portfolio-Site-version-3
 
-__Author:__ *Dustin Hammack*
+__Author:__ *[Dustin Hammack](https://www.dustinhammack.com)*
 
 **__Personal portfolio website of yours truly__**:
 *[Dustin Hammack](https://www.dustinhammack.com)*
