@@ -22,3 +22,11 @@ __Author:__ *[Dustin Hammack](https://www.dustinhammack.com "Dustin Hammack onli
 ## Purpose
 
 Web Developer portfolio website to showcase my projects and skills.
+
+### Workflow
+
+* **__Make sure you have Node and NPM installed__**
+* Clone project
+* cd \<project-folder\>
+* npm install
+* gulp watch
