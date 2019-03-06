@@ -9,6 +9,9 @@ __Author:__ *[Dustin Hammack](https://www.dustinhammack.com)*
 *Updated Jan/Feb 2019*
 
 * Restructure of entire project with more modular approach for maintainability
+* Updated UI Design
+* Fully responsive
+* Cross browser compatible
 * Now using BEM methodology for styling purposes
 * Removed Bootstrap framework
 * Upgraded all JS scripts to use es6 syntax
