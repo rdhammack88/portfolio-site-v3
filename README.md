@@ -1,9 +1,11 @@
 # Personal-Portfolio-Site-version-3
 
 *__Author: Dustin Hammack__*
-**__Personal portfolio website of yours truly__**
+
+**__Personal portfolio website of yours truly__**:
 *[Dustin Hammack](https://www.dustinhammack.com)*
-**Updated January 2019**
+
+**Updated January/February 2019**
 
 ## Updates Included
 
