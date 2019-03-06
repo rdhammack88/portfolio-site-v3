@@ -6,8 +6,7 @@ __Author:__ *Dustin Hammack*
 *[Dustin Hammack](https://www.dustinhammack.com)*
 
 ## Updates
-
-### *Updated Jan/Feb 2019*
+*Updated Jan/Feb 2019*
 
 * Restructure of entire project with more modular approach for maintainability
 * Now using BEM methodology for styling purposes
