@@ -6,7 +6,8 @@ __Author:__ *[Dustin Hammack](https://www.dustinhammack.com "Dustin Hammack onli
 *[Dustin Hammack](https://www.dustinhammack.com "Dustin Hammack online portfolio")*
 
 ## Updates
-*Updated Jan/Feb 2019*
+
+*__Updated Jan/Feb 2019__*
 
 * Restructure of entire project with more modular approach for maintainability
 * Updated UI Design
