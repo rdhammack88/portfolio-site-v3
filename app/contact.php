@@ -29,8 +29,10 @@ if (isset($_POST['robotCheck']) && $_POST['robotCheck'] === 'gotcha') {
         //							</tbody>
         //						</table></body></html>";
         
+        // $return_form = "https://docs.google.com/forms/d/e/1FAIpQLScHuRggvG40L5IaYpRigPux-qQtKkT9A-WAfWPNdupIXk3rEg/viewform?usp=sf_link";
+        $return_form = "https://forms.gle/yABmRaDwnJAEZyhd8";
         $return_subject = "Lets work together!";
-        $return_message = wordwrap("Dear $name, \r\n\n\t\t Thank you for the interest in working with me to create the next big thing for the web. I'll be in touch with you soon. Looking forward to working together! \r\n\n Sincerely, \r\n\t\t Dustin Hammack", 50); //70
+        $return_message = wordwrap("Dear $name, \r\n\n\t\t Thank you for the interest in working with me to create the next big thing for the web. I'll be in touch with you very soon. In the mean time, so I know that you are serious about your project inquiry, please take a few moments to fill out the following questionnaire, which can better help me understand what you are looking for in your finished project. \r\n\n <a href=\"$return_form\" title=\"Project request form\">Project Questionnaire</a> \r\n\n Sincerely, \r\n\t\t Dustin Hammack", 50); //70
         //	$return_message = $return_template;
         $return_headers = "From: directconnect@dustinhammack.com";
         //<table><tbody><td>
